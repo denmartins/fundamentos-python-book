@@ -4,9 +4,14 @@
 format: jb-book
 root: index
 chapters:
-  - file: book/markdown
-  - file: book/notebooks
-  - file: book/bibliography
+  - file: book/conceitos-basicos
+  - file: book/variaveis-tipos-dados
+  - file: book/estruturas-de-controle-loop
+  - file: book/strings
+  - file: book/listas
+  # - file: book/markdown
+  # - file: book/notebooks
+  # - file: book/bibliography
 
 # Or you organize the TOC by parts
 
