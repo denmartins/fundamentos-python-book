@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fundamentos de Programação em Python &#8212; Fundamentos de Programação em Python</title>
+    <title>Estruturas de Controle e Laços de Repetição &#8212; Fundamentos de Programação em Python</title>
   
   
   
@@ -62,8 +62,8 @@
     <link rel="icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Fundamentos de Programação em Python" href="strings.html" />
-    <link rel="prev" title="Fundamentos de Programação em Python" href="variaveis-tipos-dados.html" />
+    <link rel="next" title="Manipulação de Strings" href="strings.html" />
+    <link rel="prev" title="Variáveis e Tipos de Dados em Python" href="variaveis-tipos-dados.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,11 +174,11 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="conceitos-basicos.html">Fundamentos de Programação em Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="variaveis-tipos-dados.html">Fundamentos de Programação em Python</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de Programação em Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="strings.html">Fundamentos de Programação em Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="listas.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceitos-basicos.html">Introdução à linguagem Python e ao ambiente Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variaveis-tipos-dados.html">Variáveis e Tipos de Dados em Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Estruturas de Controle e Laços de Repetição</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Manipulação de Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas em Python</a></li>
 </ul>
 
     </div>
@@ -430,7 +430,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fundamentos de Programação em Python</h1>
+    <h1>Estruturas de Controle e Laços de Repetição</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -440,9 +440,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontificia-universidade-catolica-de-campinas"><strong>Pontifícia Universidade Católica de Campinas</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-denis-mayr-lima-martins"><strong>Prof. Dr. Denis Mayr Lima Martins</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-controle-e-lacos-de-repeticao">📝 Estruturas de Controle e Laços de Repetição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-relacionais-ou-de-comparacao">Operadores de relacionais ou de comparação</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores Lógicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia-de-operadores-logicos">Precedência de operadores lógicos</a></li>
@@ -485,18 +482,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-programacao-em-python">
-<h1>Fundamentos de Programação em Python<a class="headerlink" href="#fundamentos-de-programacao-em-python" title="Link to this heading">#</a></h1>
-<section id="pontificia-universidade-catolica-de-campinas">
-<h2><strong>Pontifícia Universidade Católica de Campinas</strong><a class="headerlink" href="#pontificia-universidade-catolica-de-campinas" title="Link to this heading">#</a></h2>
-</section>
-<section id="prof-dr-denis-mayr-lima-martins">
-<h2><strong>Prof. Dr. Denis Mayr Lima Martins</strong><a class="headerlink" href="#prof-dr-denis-mayr-lima-martins" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="estruturas-de-controle-e-lacos-de-repeticao">
+<h1>Estruturas de Controle e Laços de Repetição<a class="headerlink" href="#estruturas-de-controle-e-lacos-de-repeticao" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
-</section>
-<section id="estruturas-de-controle-e-lacos-de-repeticao">
-<h2>📝 Estruturas de Controle e Laços de Repetição<a class="headerlink" href="#estruturas-de-controle-e-lacos-de-repeticao" title="Link to this heading">#</a></h2>
 <p>Bem-vindo a mais uma aula de <strong>Fundamentos de Programação em Python</strong>!</p>
 <p>Vamos mergulhar em uma das partes mais importantes da programação em Python: as estruturas de controle e laços de
 repetição!</p>
@@ -517,7 +505,6 @@ Aqui está a lista resumida em <strong>quatro bullet points</strong>:</p>
 <li><p>Explorar expressões booleanas e operadores lógicos (and, or, not).</p></li>
 <li><p><strong>Aplicar esses conceitos na resolução de problemas práticos</strong>, como validação de entrada e contagem de valores.</p></li>
 </ul>
-</section>
 <hr class="docutils" />
 <section id="operadores-de-relacionais-ou-de-comparacao">
 <h2>Operadores de relacionais ou de comparação<a class="headerlink" href="#operadores-de-relacionais-ou-de-comparacao" title="Link to this heading">#</a></h2>
@@ -1286,7 +1273,7 @@ usuário digita 5, o programa deve imprimir 5 + 10 + 15 + 20.</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Fundamentos de Programação em Python</p>
+        <p class="prev-next-title">Variáveis e Tipos de Dados em Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -1294,7 +1281,7 @@ usuário digita 5, o programa deve imprimir 5 + 10 + 15 + 20.</p></li>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Fundamentos de Programação em Python</p>
+        <p class="prev-next-title">Manipulação de Strings</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1314,9 +1301,6 @@ usuário digita 5, o programa deve imprimir 5 + 10 + 15 + 20.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontificia-universidade-catolica-de-campinas"><strong>Pontifícia Universidade Católica de Campinas</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-denis-mayr-lima-martins"><strong>Prof. Dr. Denis Mayr Lima Martins</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-controle-e-lacos-de-repeticao">📝 Estruturas de Controle e Laços de Repetição</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-relacionais-ou-de-comparacao">Operadores de relacionais ou de comparação</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores Lógicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia-de-operadores-logicos">Precedência de operadores lógicos</a></li>
