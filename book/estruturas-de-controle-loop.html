@@ -1,0 +1,1405 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fundamentos de Programação em Python &#8212; Fundamentos de Programação em Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/estruturas-de-controle-loop';</script>
+    <link rel="canonical" href="https://denmartins.github.io/fundamentos-python-book/book/estruturas-de-controle-loop.html" />
+    <link rel="icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fundamentos de Programação em Python" href="strings.html" />
+    <link rel="prev" title="Fundamentos de Programação em Python" href="variaveis-tipos-dados.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Fundamentos de Programação em Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Fundamentos de Programação em Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="conceitos-basicos.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variaveis-tipos-dados.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Fundamentos de Programação em Python</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/denmartins/fundamentos-python-book/master?urlpath=tree/book/estruturas-de-controle-loop.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/denmartins/fundamentos-python-book/blob/master/book/estruturas-de-controle-loop.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/edit/main/book/estruturas-de-controle-loop.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/issues/new?title=Issue%20on%20page%20%2Fbook/estruturas-de-controle-loop.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/estruturas-de-controle-loop.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fundamentos de Programação em Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontificia-universidade-catolica-de-campinas"><strong>Pontifícia Universidade Católica de Campinas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-denis-mayr-lima-martins"><strong>Prof. Dr. Denis Mayr Lima Martins</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-controle-e-lacos-de-repeticao">📝 Estruturas de Controle e Laços de Repetição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-relacionais-ou-de-comparacao">Operadores de relacionais ou de comparação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores Lógicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia-de-operadores-logicos">Precedência de operadores lógicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resumo-de-operadores-de-comparacao-e-logicos-em-python">Resumo de operadores de comparação e lógicos em Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-condicionais">Estruturas condicionais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-laco-de-repeticao">Estruturas de laço de repetição</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">While loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-atribuicao">Operadores de atribuição</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-infinito">Loop infinito</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comando-break">Comando <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comando-continue">Comando <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-len">Função <code class="docutils literal notranslate"><span class="pre">len()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">For loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-range">Função <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conteudo-adicional">Conteúdo adicional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-programacao-em-python">
+<h1>Fundamentos de Programação em Python<a class="headerlink" href="#fundamentos-de-programacao-em-python" title="Link to this heading">#</a></h1>
+<section id="pontificia-universidade-catolica-de-campinas">
+<h2><strong>Pontifícia Universidade Católica de Campinas</strong><a class="headerlink" href="#pontificia-universidade-catolica-de-campinas" title="Link to this heading">#</a></h2>
+</section>
+<section id="prof-dr-denis-mayr-lima-martins">
+<h2><strong>Prof. Dr. Denis Mayr Lima Martins</strong><a class="headerlink" href="#prof-dr-denis-mayr-lima-martins" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+</section>
+<section id="estruturas-de-controle-e-lacos-de-repeticao">
+<h2>📝 Estruturas de Controle e Laços de Repetição<a class="headerlink" href="#estruturas-de-controle-e-lacos-de-repeticao" title="Link to this heading">#</a></h2>
+<p>Bem-vindo a mais uma aula de <strong>Fundamentos de Programação em Python</strong>!</p>
+<p>Vamos mergulhar em uma das partes mais importantes da programação em Python: as estruturas de controle e laços de
+repetição!</p>
+<p>Usamos esses conceitos para controlar o fluxo de execução do nosso programa.</p>
+<p><strong>📌 O que veremos hoje?</strong></p>
+<ul class="simple">
+<li><p>Estruturas de controle: <code class="docutils literal notranslate"><span class="pre">if</span></code> (condição), <code class="docutils literal notranslate"><span class="pre">else</span></code> (caso contrário) e <code class="docutils literal notranslate"><span class="pre">elif</span></code> (caso específico).</p></li>
+<li><p>Laços de repetição <code class="docutils literal notranslate"><span class="pre">for</span></code> (laço de iteração) e o <code class="docutils literal notranslate"><span class="pre">while</span></code> (laço de condição).</p></li>
+<li><p>Operadores de atribuição, comparação e de lógica Booleana.</p></li>
+</ul>
+<p><strong>🎯 Objetivos de Aprendizagem</strong></p>
+<p>Ao final desta aula, você será capaz de:
+Aqui está a lista resumida em <strong>quatro bullet points</strong>:</p>
+<ul class="simple">
+<li><p>Compreender estruturas condicionais (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>) e seu papel na tomada de decisões.</p></li>
+<li><p>Explorar laços de repetição (<code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code> para automatizar tarefas repetitivas.</p></li>
+<li><p>Diferenciar o uso de <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>, evitando loops infinitos e aplicando boas práticas.</p></li>
+<li><p>Explorar expressões booleanas e operadores lógicos (and, or, not).</p></li>
+<li><p><strong>Aplicar esses conceitos na resolução de problemas práticos</strong>, como validação de entrada e contagem de valores.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="operadores-de-relacionais-ou-de-comparacao">
+<h2>Operadores de relacionais ou de comparação<a class="headerlink" href="#operadores-de-relacionais-ou-de-comparacao" title="Link to this heading">#</a></h2>
+<p>Os operadores relacionais ou de comparação em Python são utilizados para comparar dois valores e retornam um resultado booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>).
+Os principais operadores de comparação são: igualdade (<code class="docutils literal notranslate"><span class="pre">==</span></code>), diferença (<code class="docutils literal notranslate"><span class="pre">!=</span></code>), maior (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), menor (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>), maior ou igual (<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>) e menor ou igual (<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>). Esses operadores são amplamente utilizados em verificações lógicas, filtragem de dados e controle de fluxo dentro do código</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="o">==</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">==</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dog&quot;</span> <span class="o">!=</span> <span class="s2">&quot;cat&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;hello&quot;</span> <span class="o">==</span> <span class="s2">&quot;hello&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;hello&quot;</span> <span class="o">==</span> <span class="s2">&quot;Hello&quot;</span> <span class="c1"># Case sensitive</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="o">&gt;=</span> <span class="mi">40</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="o">&lt;=</span> <span class="mi">43</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_participantes</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">num_participantes</span> <span class="o">&gt;=</span> <span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operadores-logicos">
+<h2>Operadores Lógicos<a class="headerlink" href="#operadores-logicos" title="Link to this heading">#</a></h2>
+<p>Em Python, existem três operadores lógicos fundamentais que nos ajudam a
+conectar duas expressões e obter um resultado booleano. Esses operadores
+são semelhantes aos operadores aritméticos, mas com uma diferença
+importante: em vez de retornar números ou até mesmo strings, eles apenas
+oferecem dois resultados possíveis - verdadeiro (True) ou falso (False).
+São eles:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> (e lógico)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> (ou lógico)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code> (não)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Avalie o resultado da expressão abaixo</span>
+<span class="p">(</span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos ver no passo-a-passo:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(4</span> <span class="pre">&lt;</span> <span class="pre">5)</span> <span class="pre">and</span> <span class="pre">(5</span> <span class="pre">&lt;</span> <span class="pre">6)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">(5</span> <span class="pre">&lt;</span> <span class="pre">6)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">9</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite sua idade: &quot;</span><span class="p">))</span>
+<span class="n">eh_maior_de_idade</span> <span class="o">=</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade do usuário: &quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maior de idade? &quot;</span><span class="p">,</span> <span class="n">eh_maior_de_idade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Tabela Verdade</strong> para Operadores <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>A</p></th>
+<th class="head text-center"><p>B</p></th>
+<th class="head text-center"><p>A <code class="docutils literal notranslate"><span class="pre">and</span></code> B</p></th>
+<th class="head text-center"><p>A <code class="docutils literal notranslate"><span class="pre">or</span></code> B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>False</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+<td class="text-center"><p>True</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arquivo_existe</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O arquivo exite? &quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="n">arquivo_existe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="precedencia-de-operadores-logicos">
+<h3>Precedência de operadores lógicos<a class="headerlink" href="#precedencia-de-operadores-logicos" title="Link to this heading">#</a></h3>
+<p>Nos operadores aritméticos seguimos a ordem: parênteses, potenciação, multiplicação/divisão/módulo, adição/subtração da esquerda
+para a direita. Enquanto isso, nos operadores lógicos seguimos a seguinte ordem:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Parênteses</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code>.</p></li>
+</ol>
+<p>📖 <strong>Exercício 1</strong>: avalie as expressões abaixo.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(10</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0)</span> <span class="pre">and</span> <span class="pre">(2</span> <span class="pre">&gt;</span> <span class="pre">1)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">4</span> <span class="pre">and</span> <span class="pre">not</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">5</span> <span class="pre">and</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">2</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione suas respostas aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione suas respostas aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resumo-de-operadores-de-comparacao-e-logicos-em-python">
+<h3>Resumo de operadores de comparação e lógicos em Python<a class="headerlink" href="#resumo-de-operadores-de-comparacao-e-logicos-em-python" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Operadores de igualdade</strong>:</p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> (igual a)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> (não igual a)</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Operadores de desigualdade</strong>:</p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> (menor que)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (maior que)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> (menor ou igual a)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (maior ou igual a)</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Operadores lógicos</strong>:</p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> (e, lógico e AND)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> (ou, lógico OU)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code> (não, lógico NOT)</p></li>
+</ul>
+</section>
+</section>
+<section id="estruturas-condicionais">
+<h2>Estruturas condicionais<a class="headerlink" href="#estruturas-condicionais" title="Link to this heading">#</a></h2>
+<p>O comando <code class="docutils literal notranslate"><span class="pre">if</span></code> em Python é utilizado para criar estruturas condicionais, permitindo que um bloco de código seja executado apenas se uma determinada condição for verdadeira. Ele é essencial para a tomada de decisões dentro de um programa.</p>
+<p>Sintaxe: uma expressão <strong>lógica</strong> seguida de dois pontos (<code class="docutils literal notranslate"><span class="pre">:</span></code>), e o bloco de código associado deve ser <strong>indentado</strong> corretamente. Em alguns casos, podem ser utilizados os comandos <code class="docutils literal notranslate"><span class="pre">elif</span></code> (para testar condições adicionais) e <code class="docutils literal notranslate"><span class="pre">else</span></code> (para definir uma ação caso nenhuma das condições anteriores seja atendida).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 é par&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hoje_e_domingo</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">hoje_e_domingo</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hoje é domingo&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hoje nao é domingo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>💡 <strong>Dica:</strong> Uma maneira melhor de escrever o código acima é omitir a parte <code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">True</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hoje_e_domingo</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">hoje_e_domingo</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hoje é domingo&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hoje nao é domingo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatura</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">prob_chuva</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O dia será: &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">temperatura</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quente&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">prob_chuva</span> <span class="o">&gt;</span> <span class="mf">0.7</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Com pancadas de chuva&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">temperatura</span> <span class="o">&gt;=</span> <span class="mi">30</span> <span class="ow">and</span> <span class="n">prob_chuva</span> <span class="o">&gt;</span> <span class="mf">0.8</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Muito abafado&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>💡 <strong>Importante:</strong> Na prática, não importa o que seja colocado dentro da área de condições, desde que o resultado seja um booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite sua idade: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>  <span class="c1"># Executado se a condição for verdadeira</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>  <span class="c1"># Executado se a condição for falsa</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade do usuário: &quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo de controle de acesso</strong>: Neste exemplo, vamos implementar uma verificação simples de permissão de usuário. Dependendo do tipo do usuário, (administrador, técnico, ou operador normal), diferentes permissões serão exibidas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos o perfil do usuário logado</span>
+<span class="n">perfil_usuario</span> <span class="o">=</span> <span class="s1">&#39;tecnico&#39;</span>
+
+<span class="c1"># Verificamos o perfil do usuário</span>
+<span class="k">if</span> <span class="n">perfil_usuario</span> <span class="o">==</span> <span class="s1">&#39;admin&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usuário: Administrador&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você tem acesso total ao sistema de produção&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">perfil_usuario</span> <span class="o">==</span> <span class="s1">&#39;tecnico&#39;</span><span class="p">:</span>  <span class="c1"># Se for técnico</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usuário: Técnico de Manutenção&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você tem acesso para realizar manutenções&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">perfil_usuario</span> <span class="o">==</span> <span class="s2">&quot;operador_normal&quot;</span><span class="p">:</span>  <span class="c1"># Se for um operador normal</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usuário: Operador Normal&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você tem acesso para operar as máquinas&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>  <span class="c1"># Se não for nenhum dos casos acima</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usuário: Visitante&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você está sem acesso&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 2</strong>: Implemente um algoritmo que dada a idade de um nadador (lida do teclado) imprime a categoria na qual ele está:</p>
+<ul class="simple">
+<li><p>infantil A = 5 - 7 anos</p></li>
+<li><p>infantil B = 8-10 anos</p></li>
+<li><p>juvenil A = 11-13 anos</p></li>
+<li><p>juvenil B = 14-17 anos</p></li>
+<li><p>adulto = maiores de 18 anos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione suas respostas aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="estruturas-de-laco-de-repeticao">
+<h2>Estruturas de laço de repetição<a class="headerlink" href="#estruturas-de-laco-de-repeticao" title="Link to this heading">#</a></h2>
+<p>Os <strong>laços de repetição</strong> em Python são estruturas fundamentais para a automação de tarefas repetitivas dentro de um programa. Eles permitem a execução de um bloco de código múltiplas vezes, reduzindo a necessidade de comandos redundantes.</p>
+<p>Python oferece dois tipos principais de laços: o <code class="docutils literal notranslate"><span class="pre">for</span></code>, utilizado para percorrer sequências como listas, strings e intervalos numéricos, e o <code class="docutils literal notranslate"><span class="pre">while</span></code>, que executa um bloco de código enquanto uma determinada condição lógica permanecer verdadeira.</p>
+<section id="while-loop">
+<h3>While loop<a class="headerlink" href="#while-loop" title="Link to this heading">#</a></h3>
+<p>O comando <code class="docutils literal notranslate"><span class="pre">while</span></code> em Python é uma estrutura de repetição que executa um bloco de código enquanto uma determinada condição for verdadeira. Ele é amplamente utilizado quando o número exato de iterações não é conhecido previamente, permitindo a repetição baseada em uma expressão lógica.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">contador</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
+  <span class="n">contador</span> <span class="o">=</span> <span class="n">contador</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="operadores-de-atribuicao">
+<h4>Operadores de atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Link to this heading">#</a></h4>
+<p>Os <strong>operadores de atribuição</strong> permitem realizar operações matemáticas e atualizar variáveis de maneira mais concisa, como <code class="docutils literal notranslate"><span class="pre">+=</span></code>, <code class="docutils literal notranslate"><span class="pre">-=</span></code>, <code class="docutils literal notranslate"><span class="pre">*=</span></code>, <code class="docutils literal notranslate"><span class="pre">/=</span></code>, <code class="docutils literal notranslate"><span class="pre">//=</span></code>, <code class="docutils literal notranslate"><span class="pre">%=</span></code> e <code class="docutils literal notranslate"><span class="pre">**=</span></code>. Esses operadores são amplamente empregados em laços de repetição e cálculos acumulativos, tornando a escrita do programa mais sucinta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="k">while</span> <span class="n">contador</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
+  <span class="n">contador</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Novo exemplo</span>
+<span class="n">continuar</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Variável booleana para controlar o loop</span>
+
+<span class="c1"># Loop que continua enquanto &#39;continuar&#39; for True</span>
+<span class="k">while</span> <span class="n">continuar</span><span class="p">:</span>
+    <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Deseja continuar? Digite s (para sim) ou n(para nao): &quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>
+        <span class="n">continuar</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># A condição de parada é atingida, o loop vai parar</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop encerrado.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você escolheu continuar.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não reconheci sua resposta. Tente novamente.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="loop-infinito">
+<h3>Loop infinito<a class="headerlink" href="#loop-infinito" title="Link to this heading">#</a></h3>
+<p>Ao utilizar o comando <strong><code class="docutils literal notranslate"><span class="pre">while</span></code></strong> em Python, é fundamental adotar boas práticas para evitar a ocorrência de <strong>loops infinitos</strong>, que podem comprometer a execução do programa, causando a sua paralisação. Um <strong>loop infinito</strong> ocorre quando a condição de parada nunca se torna <strong>False</strong>, resultando em uma execução contínua sem término.</p>
+<p>Para evitar esse problema, é essencial garantir que a variável de controle seja devidamente atualizada dentro do bloco de repetição. Além disso, é recomendável estabelecer critérios de saída adicionais, como contadores auxiliares ou verificações condicionais, assegurando que o laço não permaneça em execução indefinidamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cuidado com esse código! Loop infinito</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">continuar</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Variável booleana para controlar o loop</span>
+<span class="n">contador</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Loop que continua enquanto &#39;continuar&#39; for True ou até a 11a interação</span>
+<span class="k">while</span> <span class="n">continuar</span> <span class="ow">and</span> <span class="n">contador</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Deseja continuar? Digite s (para sim) ou n(para nao): &quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>
+        <span class="n">continuar</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># A condição de parada é atingida, o loop vai parar</span>
+        <span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Zera o contador</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop encerrado pelo usuário.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você escolheu continuar.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não reconheci sua resposta. Tente novamente.&quot;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tentativas restantes: &quot;</span><span class="p">,</span> <span class="n">contador</span><span class="p">)</span>
+    <span class="n">contador</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c1"># Decrementa o contador</span>
+    
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saiu do loop&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comando-break">
+<h3>Comando <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#comando-break" title="Link to this heading">#</a></h3>
+<p>O comando <strong><code class="docutils literal notranslate"><span class="pre">break</span></code></strong> é uma instrução de controle de fluxo utilizada para <strong>interromper a execução de um laço de repetição</strong>, encerrando o loop imediatamente, independentemente da condição de parada definida.</p>
+<p>Seu uso é particularmente relevante em situações onde um critério de saída específico deve ser atendido, permitindo maior flexibilidade na estrutura do programa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Novas palavras-chave: break</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O valor é&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+      <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para fazermos juntos</span>
+<span class="n">valor</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Mostrar no quadro: count / condição / operacoes</span>
+
+<span class="k">while</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;O número par é &#39;</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
+  <span class="n">valor</span> <span class="o">=</span> <span class="n">valor</span> <span class="o">+</span> <span class="mi">2</span>
+  <span class="k">if</span> <span class="n">valor</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+      <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remodelando o exemplo previamente visto</span>
+
+<span class="n">contador</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Loop que continua enquanto &#39;continuar&#39; for True ou até a 10a interação</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tentativas restantes: &quot;</span><span class="p">,</span> <span class="n">contador</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">contador</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+    
+    <span class="n">contador</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c1"># Decrementa o contador</span>
+
+    <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Deseja continuar? Digite s (para sim) ou n(para nao): &quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop encerrado pelo usuário.&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você escolheu continuar.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não reconheci sua resposta. Tente novamente.&quot;</span><span class="p">)</span>
+    
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saiu do loop&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comando-continue">
+<h3>Comando <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#comando-continue" title="Link to this heading">#</a></h3>
+<p>O comando <strong><code class="docutils literal notranslate"><span class="pre">continue</span></code></strong> é uma instrução de controle de fluxo utilizada dentro de laços de repetição, como o <strong><code class="docutils literal notranslate"><span class="pre">while</span></code></strong>, para <strong>pular a iteração atual</strong> e continuar a execução do loop a partir da próxima iteração. Diferentemente do comando <code class="docutils literal notranslate"><span class="pre">break</span></code>, que interrompe completamente a repetição, o <code class="docutils literal notranslate"><span class="pre">continue</span></code> permite que o laço prossiga sem executar o restante do código dentro da iteração corrente.</p>
+<p>Esse comando é útil em situações onde certas condições precisam ser ignoradas temporariamente, como na filtragem de dados ou no controle de validações dentro de um loop. No entanto, seu uso deve ser planejado com cautela para garantir a clareza e previsibilidade do código.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usando o comando continue</span>
+<span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">contador</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># Pula números pares e continua a próxima iteração</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número ímpar:&quot;</span><span class="p">,</span> <span class="n">contador</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funcao-len">
+<h3>Função <code class="docutils literal notranslate"><span class="pre">len()</span></code><a class="headerlink" href="#funcao-len" title="Link to this heading">#</a></h3>
+<p>A função <strong><code class="docutils literal notranslate"><span class="pre">len()</span></code></strong> é utilizada para determinar o comprimento de uma sequência, como <strong>strings, listas e tuplas</strong>. Quando aplicada a uma <strong>string</strong>, ela retorna o número total de caracteres, incluindo espaços e pontuações. Em conjunto com estruturas de repetição, a função <code class="docutils literal notranslate"><span class="pre">len()</span></code> permite percorrer cada caractere da string de forma controlada, possibilitando a realização de diversas operações, como contagem de letras e filtragem de elementos específicos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palavra</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">palavra</span><span class="p">)</span> <span class="c1"># Número de caracteres na string</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palavra</span> <span class="o">=</span> <span class="s2">&quot;papaia&quot;</span>
+<span class="n">indice</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">indice</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">palavra</span><span class="p">):</span>
+    <span class="n">letra</span> <span class="o">=</span> <span class="n">palavra</span><span class="p">[</span><span class="n">indice</span><span class="p">]</span>
+    <span class="n">indice</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">letra</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 3</strong>:</p>
+<ol class="arabic simple">
+<li><p>Crie um programa que pergunte ao usuário por um número e, em seguida, peça se ele deseja
+multiplicar esse número por uma sequência de números inteiros a partir de 1. Por exemplo, se o
+usuário digita 5, o programa deve imprimir 5 + 10 + 15 + 20.</p></li>
+<li><p>Crie um programa que solicita um número inteiro positivo ao usuário e exibe esse número invertido. Dicas:</p>
+<ul class="simple">
+<li><p>Utilize um loop while para extrair os dígitos do número.</p></li>
+<li><p>Utilize operações matemáticas (<code class="docutils literal notranslate"><span class="pre">%</span></code> e <code class="docutils literal notranslate"><span class="pre">//</span></code>) para manipular os dígitos.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="for-loop">
+<h2>For loop<a class="headerlink" href="#for-loop" title="Link to this heading">#</a></h2>
+<p>O comando <code class="docutils literal notranslate"><span class="pre">for</span></code> é uma estrutura de repetição amplamente utilizada para percorrer elementos de uma sequência, como <strong>listas, strings, tuplas e intervalos numéricos</strong>. Diferente do <code class="docutils literal notranslate"><span class="pre">while</span></code>, que depende de uma condição lógica para execução, o <code class="docutils literal notranslate"><span class="pre">for</span></code> itera sobre cada elemento da sequência de forma <strong>controlada e previsível</strong>, tornando-o ideal para manipulação de conjuntos de dados.</p>
+<p>Esse laço é amplamente aplicado em algoritmos que envolvem <strong>iterações finitas</strong>, como processamento de textos, varredura de listas e cálculos computacionais.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="s2">&quot;Python&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Apenas números pares</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="funcao-range">
+<h3>Função <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#funcao-range" title="Link to this heading">#</a></h3>
+<p>A função <strong><code class="docutils literal notranslate"><span class="pre">range()</span></code></strong> é utilizada em conjunto com o laço <strong><code class="docutils literal notranslate"><span class="pre">for</span></code></strong> para gerar sequências numéricas. Sua principal finalidade é permitir a iteração controlada sobre um conjunto de valores inteiros, sem a necessidade de criar listas manualmente.</p>
+<p>A função aceita até três parâmetros: <strong>início</strong>, <strong>fim</strong> (não inclusivo) e <strong>passo</strong>, proporcionando flexibilidade na definição dos intervalos numéricos. Essa característica torna o <code class="docutils literal notranslate"><span class="pre">range()</span></code> essencial para a construção de laços que exigem um número específico de iterações.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Itera de 0 até 10, com passo 2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>  <span class="c1"># range(sart, stop, step)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soma</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="c1"># O zero pode ser omitido no início da função range()</span>
+    <span class="n">soma</span> <span class="o">+=</span> <span class="n">numero</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soma: &quot;</span><span class="p">,</span> <span class="n">soma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imprimir números de 0 a 20 usando um loop</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gere os números de 10 até 1 (contagem regressiva).</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Números de 0 a 20 com passo 5</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fatorial do número 5</span>
+<span class="c1">#...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📝 <strong>Exercícios para Praticar</strong>:</p>
+<p>🟢 <strong>Nível Fácil</strong>: Escreva um programa que solicita ao usuário uma palavra e conta quantas vogais e consoantes ela possui.</p>
+<p><strong>Requisitos:</strong></p>
+<ul class="simple">
+<li><p>Utilize um loop <code class="docutils literal notranslate"><span class="pre">for</span></code> para percorrer a string.</p></li>
+<li><p>Utilize condições (<code class="docutils literal notranslate"><span class="pre">if</span></code>) para verificar se um caractere é uma vogal ou consoante.</p></li>
+<li><p>Considere apenas letras (ignore espaços, números e caracteres especiais).</p></li>
+</ul>
+<p>🔵 <strong>Nível Médio</strong>: Crie um programa que solicita um número inteiro positivo ao usuário e calcula a <strong>soma de seus dígitos</strong>.</p>
+<p><strong>Requisitos:</strong></p>
+<ul class="simple">
+<li><p>Utilize um <strong>loop <code class="docutils literal notranslate"><span class="pre">while</span></code></strong> para extrair os dígitos do número.</p></li>
+<li><p>Utilize um operador matemático para obter o último dígito (<code class="docutils literal notranslate"><span class="pre">%</span></code>).</p></li>
+</ul>
+<p><strong>Exemplo de Entrada e Saída:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Digite</span> <span class="n">um</span> <span class="n">número</span><span class="p">:</span> <span class="mi">1234</span>
+<span class="n">A</span> <span class="n">soma</span> <span class="n">dos</span> <span class="n">dígitos</span> <span class="n">é</span><span class="p">:</span> <span class="mi">10</span>  <span class="c1"># (1 + 2 + 3 + 4) </span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione suas respostas aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conclusao">
+<h2>✅ Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Parabéns por concluir esta aula!</p>
+<section id="o-que-aprendemos-hoje">
+<h3>🎯 O que aprendemos hoje?<a class="headerlink" href="#o-que-aprendemos-hoje" title="Link to this heading">#</a></h3>
+<p>Nesta aula, exploramos conceitos fundamentais para controlar o fluxo de um programa em <strong>Python</strong>:</p>
+<ul class="simple">
+<li><p>Como utilizar <strong>estruturas condicionais</strong> (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>) para tomar decisões.</p></li>
+<li><p>O uso de <strong>laços de repetição</strong> (<code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>) para executar comandos de forma automática.</p></li>
+<li><p>A diferença entre <strong>iteração controlada</strong> (<code class="docutils literal notranslate"><span class="pre">for</span></code>) e <strong>iteração condicional</strong> (<code class="docutils literal notranslate"><span class="pre">while</span></code>).</p></li>
+</ul>
+</section>
+</section>
+<section id="proximos-passos">
+<h2>📌 Próximos Passos<a class="headerlink" href="#proximos-passos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Resolva os problemas na seção “Exercícios para Praticar”.</p></li>
+<li><p>Caso tenha dúvidas, revise os exemplos e experimente modificá-los. A programação se aprende na prática!</p></li>
+</ul>
+<section id="conteudo-adicional">
+<h3>Conteúdo adicional<a class="headerlink" href="#conteudo-adicional" title="Link to this heading">#</a></h3>
+<p>📖 <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html">Documentação Oficial do Python – Estruturas de Controle</a></p>
+</section>
+<section id="parabens-pela-dedicacao-nos-vemos-na-proxima-aula">
+<h3>Parabéns pela dedicação! Nos vemos na próxima aula!<a class="headerlink" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="variaveis-tipos-dados.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fundamentos de Programação em Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="strings.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fundamentos de Programação em Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontificia-universidade-catolica-de-campinas"><strong>Pontifícia Universidade Católica de Campinas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-denis-mayr-lima-martins"><strong>Prof. Dr. Denis Mayr Lima Martins</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-controle-e-lacos-de-repeticao">📝 Estruturas de Controle e Laços de Repetição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-relacionais-ou-de-comparacao">Operadores de relacionais ou de comparação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores Lógicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia-de-operadores-logicos">Precedência de operadores lógicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resumo-de-operadores-de-comparacao-e-logicos-em-python">Resumo de operadores de comparação e lógicos em Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-condicionais">Estruturas condicionais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-laco-de-repeticao">Estruturas de laço de repetição</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">While loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-atribuicao">Operadores de atribuição</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-infinito">Loop infinito</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comando-break">Comando <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comando-continue">Comando <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-len">Função <code class="docutils literal notranslate"><span class="pre">len()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">For loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-range">Função <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conteudo-adicional">Conteúdo adicional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr. Denis M. L. Martins
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

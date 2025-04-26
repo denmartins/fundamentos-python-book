@@ -1,0 +1,1112 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fundamentos de Programação em Python &#8212; Fundamentos de Programação em Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/strings';</script>
+    <link rel="canonical" href="https://denmartins.github.io/fundamentos-python-book/book/strings.html" />
+    <link rel="icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fundamentos de Programação em Python" href="listas.html" />
+    <link rel="prev" title="Fundamentos de Programação em Python" href="estruturas-de-controle-loop.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Fundamentos de Programação em Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Fundamentos de Programação em Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="conceitos-basicos.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variaveis-tipos-dados.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estruturas-de-controle-loop.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Fundamentos de Programação em Python</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/denmartins/fundamentos-python-book/master?urlpath=tree/book/strings.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/denmartins/fundamentos-python-book/blob/master/book/strings.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/edit/main/book/strings.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/issues/new?title=Issue%20on%20page%20%2Fbook/strings.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/strings.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fundamentos de Programação em Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontificia-universidade-catolica-de-campinas"><strong>Pontifícia Universidade Católica de Campinas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-denis-mayr-lima-martins"><strong>Prof. Dr. Denis Mayr Lima Martins</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-strings">📝 Manipulação de Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-de-strings-em-python">Indexação de Strings em Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-em-strings-cortando-e-manuseando-secoes">Slicing em Strings: Cortando e Manuseando Seções</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-manipulacao-de-strings">Métodos de Manipulação de Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upper-e-lower"><strong>upper()</strong> e <strong>lower()</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strip-lstrip-e-rstrip"><strong>strip()</strong>, <strong>lstrip()</strong> e <strong>rstrip()</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-de-strings"><strong>Concatenação de Strings (+)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeticao-de-strings">Repetição de Strings (*)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-e-join"><strong>split()</strong> e <strong>join()</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitlines"><strong>splitlines()</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><strong>replace()</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-strings-com-loops">Percorrendo Strings com Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">📝 <strong>Exercícios para Praticar</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-programacao-em-python">
+<h1>Fundamentos de Programação em Python<a class="headerlink" href="#fundamentos-de-programacao-em-python" title="Link to this heading">#</a></h1>
+<section id="pontificia-universidade-catolica-de-campinas">
+<h2><strong>Pontifícia Universidade Católica de Campinas</strong><a class="headerlink" href="#pontificia-universidade-catolica-de-campinas" title="Link to this heading">#</a></h2>
+</section>
+<section id="prof-dr-denis-mayr-lima-martins">
+<h2><strong>Prof. Dr. Denis Mayr Lima Martins</strong><a class="headerlink" href="#prof-dr-denis-mayr-lima-martins" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+</section>
+<section id="manipulacao-de-strings">
+<h2>📝 Manipulação de Strings<a class="headerlink" href="#manipulacao-de-strings" title="Link to this heading">#</a></h2>
+<p>Bem-vindo a mais uma aula de <strong>Fundamentos de Programação em Python</strong>!</p>
+<p>As strings são um dos tipos de dados fundamentais em Python e representam sequências de caracteres. Elas são amplamente utilizadas na programação para armazenar, processar e formatar textos, sendo essenciais para tarefas como entrada de dados, exibição de informações e manipulação textual em arquivos, bancos de dados e aplicações web.</p>
+<p>Em Python, uma string pode ser definida usando aspas simples (’…’), aspas duplas (”…”) ou triplas (‘’’…’’’ ou “””…”””) para textos de múltiplas linhas. Além disso, a linguagem fornece uma variedade de métodos embutidos e operações que permitem modificar, pesquisar e transformar strings de maneira eficiente.</p>
+<p><strong>📌 O que veremos hoje?</strong></p>
+<ul class="simple">
+<li><p>Como criar e acessar strings em Python.</p></li>
+<li><p>Como utilizar fatiamento (slicing) para extrair partes de uma string.</p></li>
+<li><p>Métodos úteis para modificar e formatar strings.</p></li>
+<li><p>Como utilizar operações com strings (concatenação, repetição, substituição).</p></li>
+<li><p>Como percorrer uma string com loops e realizar buscas com expressões regulares.</p></li>
+</ul>
+<p><strong>🎯 Objetivos de Aprendizagem</strong></p>
+<p>Ao final desta aula, você será capaz de:</p>
+<ul class="simple">
+<li><p>Compreender os conceitos fundamentais de strings em Python.</p></li>
+<li><p>Acessar e manipular substrings utilizando indexação, fatiamento e métodos de formatação.</p></li>
+<li><p>Percorrer strings e buscar informações.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="conceitos-fundamentais">
+<h2>Conceitos Fundamentais<a class="headerlink" href="#conceitos-fundamentais" title="Link to this heading">#</a></h2>
+<p>No contexto da programação, uma string é uma estrutura de dados fundamental utilizada para representar e manipular sequências de caracteres. Em Python, as strings são objetos da classe str e podem ser definidas utilizando aspas simples (’…’), aspas duplas (”…”) ou triplas (‘’’…’’’ ou “””…”””), permitindo a criação de textos de uma única linha ou múltiplas linhas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">empty_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greetings</span> <span class="o">=</span> <span class="s2">&quot;Hi! My name is Snake. I have 15 years old.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">greetings</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verifique o comprimento da string</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="indexacao-de-strings-em-python">
+<h3>Indexação de Strings em Python<a class="headerlink" href="#indexacao-de-strings-em-python" title="Link to this heading">#</a></h3>
+<p>Indexação é uma técnica fundamental ao lidar com strings em Python. Ela
+permite acessar ou modificar individualmente os caracteres dentro de uma
+string. No contexto das strings, o termo “index” se refere à posição do
+caractere dentro da sequência.</p>
+<p>A sintaxe básica para indexação de strings em Python é: <code class="docutils literal notranslate"><span class="pre">string[index]</span></code>, onde <code class="docutils literal notranslate"><span class="pre">string</span></code> é a string que você deseja trabalhar e <code class="docutils literal notranslate"><span class="pre">index</span></code> é a posição do caractere que você gostaria de acessar. A contagem dos índices começa
+em 0, o que significa que o primeiro caractere da string tem um índice de 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comedy</span> <span class="o">=</span> <span class="s2">&quot;Monty Python&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style='align: left; text-align:center;'>
+    <img src='https://www.nltk.org/images/string-slicing.png' alt='String Slicing in Python' style="height:300px;"/>
+    <span style='display:block;'>String Slicing in Python. Image Source: <a href="https://www.nltk.org/images/string-slicing.png" target="_blank">https://www.nltk.org/images/string-slicing.png</a>.</span>
+    <br/>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplos de indexação</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="slicing-em-strings-cortando-e-manuseando-secoes">
+<h3>Slicing em Strings: Cortando e Manuseando Seções<a class="headerlink" href="#slicing-em-strings-cortando-e-manuseando-secoes" title="Link to this heading">#</a></h3>
+<p>O conceito de “slicing” (ou corte) é uma ferramenta poderosa em
+programação, especialmente quando lidamos com sequências de dados como
+strings. Em Python, a operação de slicing permite que você extraia ou
+modifique partes específicas da string sem ter que trabalhar com todos os
+caracteres.</p>
+<p>A sintaxe básica para o corte de strings é:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Onde <code class="docutils literal notranslate"><span class="pre">start</span></code> e <code class="docutils literal notranslate"><span class="pre">stop</span></code> são índices, definindo a parte da string que você
+deseja extrair. Os seguintes valores podem ser usados:</p>
+<ul class="simple">
+<li><p><strong>start</strong>: O índice do caractere inicial que deseja extrair. Se omitido,
+o corte inicia automaticamente na posição 0 (o primeiro caractere).</p></li>
+<li><p><strong>stop</strong>: O índice do caractere final a ser incluído no corte. Se
+omitido, o corte continua até o fim da string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de slicing</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 1</strong>:</p>
+<ol class="arabic simple">
+<li><p>Obtenha os caracteres “y”, “t”, “h” da string “Python”.</p></li>
+<li><p>Use slicing para extrair apenas os últimos 4 caracteres de uma string passada pelo usuário.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="metodos-de-manipulacao-de-strings">
+<h2>Métodos de Manipulação de Strings<a class="headerlink" href="#metodos-de-manipulacao-de-strings" title="Link to this heading">#</a></h2>
+<p>As strings são imutáveis, o que significa que, uma vez criadas, seus valores não podem ser modificados diretamente. No entanto, Python oferece uma ampla variedade de métodos embutidos que possibilitam a manipulação eficiente dessas estruturas, como a conversão de maiúsculas para minúsculas, substituição de caracteres, extração de substrings, concatenação e formatação.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">frase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;J&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>  <span class="c1"># Saída: Jython</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">frase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;J&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<section id="upper-e-lower">
+<h3><strong>upper()</strong> e <strong>lower()</strong><a class="headerlink" href="#upper-e-lower" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>upper()</strong>: Retorna a string em maiúsculas.</p></li>
+<li><p><strong>lower()</strong>: Retorna a string em minúsculas.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">greetings</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">greetings</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">greetings</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">greetings</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="strip-lstrip-e-rstrip">
+<h3><strong>strip()</strong>, <strong>lstrip()</strong> e <strong>rstrip()</strong><a class="headerlink" href="#strip-lstrip-e-rstrip" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>strip([chars])</strong>: Remove caracteres de ambos os lados (padrão é espaço
+em branco).</p></li>
+<li><p><strong>lstrip([chars])</strong>: Remove caracteres da esquerda.</p></li>
+<li><p><strong>rstrip([chars])</strong>: Remove caracteres da direita.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s1">&#39;   Minha frase   &#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>  <span class="c1"># Minha frase</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="operacoes-com-strings">
+<h2>Operações com Strings<a class="headerlink" href="#operacoes-com-strings" title="Link to this heading">#</a></h2>
+<p>As operações básicas com strings são fundamentais para qualquer tipo de
+manipulação de texto em Python. Aqui estão duas dessas operações
+essenciais: concatenação e repetição.</p>
+<section id="concatenacao-de-strings">
+<h3><strong>Concatenação de Strings (+)</strong><a class="headerlink" href="#concatenacao-de-strings" title="Link to this heading">#</a></h3>
+<p>A concatenação é o processo de juntar duas ou mais strings para formar uma
+única string. Em Python, você pode usar o operador <code class="docutils literal notranslate"><span class="pre">+</span></code> para concatenar
+strings. Aqui está um exemplo simples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;João&#39;</span>
+<span class="n">sobrenome</span> <span class="o">=</span> <span class="s1">&#39;Silva&#39;</span>
+
+<span class="n">nome_completo</span> <span class="o">=</span> <span class="n">nome</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">sobrenome</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">nome_completo</span><span class="p">)</span>  <span class="c1"># Saída: João Silva</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="repeticao-de-strings">
+<h3>Repetição de Strings (*)<a class="headerlink" href="#repeticao-de-strings" title="Link to this heading">#</a></h3>
+<p>Outra operação importante é a repetição de strings. Você pode usar o
+operador <code class="docutils literal notranslate"><span class="pre">*</span></code> para multiplicar uma string por um número inteiro. Aqui está
+como fazer isso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
+<span class="n">repeticao</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">repeticao</span><span class="p">)</span>  <span class="c1"># Saída: PythonPythonPython</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 2</strong>: Faça um programa que concatene o nome, a idade, o RG, o CPF e a cidade do usuário. As informações do usuário devem ser obtidas pela função <code class="docutils literal notranslate"><span class="pre">input()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="split-e-join">
+<h3><strong>split()</strong> e <strong>join()</strong><a class="headerlink" href="#split-e-join" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>split([sep])</strong>: Divide a string em um lista de sub-strings, baseado no
+separador (padrão é espaço em branco).</p></li>
+<li><p><strong>join(iterable)</strong>: Combina uma lista de strings em uma única string.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;João,Silva&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>  <span class="c1"># [&#39;João&#39;, &#39;Silva&#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Split name from email address</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;user@mail.com&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nomes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;João&#39;</span><span class="p">,</span> <span class="s1">&#39;Maria&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nomes</span><span class="p">))</span>  <span class="c1"># João,Maria</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Join nome e email</span>
+<span class="n">username</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;mail.com&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="splitlines">
+<h3><strong>splitlines()</strong><a class="headerlink" href="#splitlines" title="Link to this heading">#</a></h3>
+<p><strong>splitlines()</strong>: Divide a string em um lista, considerando cada linha
+como uma sub-string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s1">&#39;Linha 1</span><span class="se">\n</span><span class="s1">Linha 2&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linhas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Linha 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Linha 2&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">linhas</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="replace">
+<h3><strong>replace()</strong><a class="headerlink" href="#replace" title="Link to this heading">#</a></h3>
+<p><strong>replace(old, new)</strong>: Substitui a ocorrência da string <code class="docutils literal notranslate"><span class="pre">old</span></code> por <code class="docutils literal notranslate"><span class="pre">new</span></code>.</p>
+<p><strong>Strings são imutáveis</strong>, o que significa que, uma vez criadas, seus valores não podem ser modificados diretamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s1">&#39;Eu não gosto de chocolate.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;chocolate&#39;</span><span class="p">,</span> <span class="s1">&#39;mel&#39;</span><span class="p">))</span>  <span class="c1"># Eu não gosto de mel.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>find()</strong></p>
+<p>O método <code class="docutils literal notranslate"><span class="pre">find()</span></code> é uma ferramenta poderosa em Python para localizar a
+primeira ocorrência de um caractere ou substring dentro de outra string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s1">&#39;Python é incrível.&#39;</span>
+
+<span class="c1"># Encontrar a primeira ocorrência da letra &quot;P&quot;</span>
+<span class="n">posicao_p</span> <span class="o">=</span> <span class="n">frase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">posicao_p</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;A letra &quot;P&quot; foi encontrada na posição </span><span class="si">{</span><span class="n">posicao_p</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A letra &quot;P&quot; não foi encontrada.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="f-strings">
+<h3>f-Strings<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h3>
+<p>Em Python 3.6+, você pode usar a sintaxe chamada “f-string” ou “formatted
+string literal” para criar strings formatadas de forma fácil e elegante.
+Aqui está uma visão geral rápida desta ferramenta poderosa!</p>
+<p>Para utilizar f-strings, você envolve o texto com aspas,
+segue por um caractere especial <code class="docutils literal notranslate"><span class="pre">f</span></code>, e então você pode usar a sintaxe de
+formato usual para especificar os valores dos dados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;João&#39;</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Olá, meu nome é </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2"> e tenho </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265359</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O valor aproximado de pi é </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 3</strong>: Refaça o exercício 2 usando f-strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="percorrendo-strings-com-loops">
+<h2>Percorrendo Strings com Loops<a class="headerlink" href="#percorrendo-strings-com-loops" title="Link to this heading">#</a></h2>
+<p>Você pode usar um loop <code class="docutils literal notranslate"><span class="pre">for</span></code> para percorrer cada caractere de
+uma string. Este método é útil quando precisamos manipular ou processar
+individualmente cada elemento da string.</p>
+<ul class="simple">
+<li><p>Iterando sobre uma string com for.</p></li>
+<li><p>Contando caracteres específicos.</p></li>
+<li><p>Construção de novas strings com loops.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s1">&#39;Python é incrível.&#39;</span>
+
+<span class="k">for</span> <span class="n">caractere</span> <span class="ow">in</span> <span class="n">frase</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">caractere</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Processando strings</strong>: Se você quiser manipular ou processar os caracteres de alguma forma
+específica enquanto percorre a string, pode fazer isso dentro do bloco de
+código executado no loop. Aqui está um exemplo que capitaliza cada
+palavra:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s1">&#39;Python é incrível.&#39;</span>
+
+<span class="n">nova_frase</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">caractere</span> <span class="ow">in</span> <span class="n">frase</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">caractere</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+        <span class="n">nova_frase</span> <span class="o">+=</span> <span class="n">caractere</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">nova_frase</span> <span class="o">+=</span> <span class="n">caractere</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">nova_frase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo (atividade do notebook anterior): loop `for` e um comando `if`</span>
+<span class="n">frase</span> <span class="o">=</span> <span class="s1">&#39;Python é incrível.&#39;</span>
+
+<span class="n">contagem_vogais</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">contagem_consoantes</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">caractere</span> <span class="ow">in</span> <span class="n">frase</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">caractere</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+        <span class="n">contagem_vogais</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">caractere</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+        <span class="n">contagem_vogais</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">caractere</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span>
+        <span class="n">contagem_vogais</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">contagem_consoantes</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Quantidade de vogais: </span><span class="si">{</span><span class="n">contagem_vogais</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Quantidade de consoantes: </span><span class="si">{</span><span class="n">contagem_consoantes</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercicios-para-praticar">
+<h2>📝 <strong>Exercícios para Praticar</strong>:<a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
+<p>🟢 <strong>Nível Fácil</strong>: Escreva um programa que recebe uma string do usuário e verifica se a string é um palíndromo. Palíndromo é toda palavra ou frase que pode ser lida de trás para frente e que, independente da direção, mantém o seu sentido. Exemplos:</p>
+<ul class="simple">
+<li><p>Ada</p></li>
+<li><p>Ana</p></li>
+<li><p>Missa é assim.</p></li>
+<li><p>O lobo ama o bolo.</p></li>
+</ul>
+<p>A verificação deve ignorar “case”, ou seja, letras maiúsculas e minúsculas.</p>
+<p>🔵 <strong>Nível Médio</strong>: Escreva um programa que recebe uma string do usuário e encontra a palavra mais frequente nessa string. Use apenas as funcionalidades básicas de strings e loops em Python, conforme visto até esta aula.</p>
+</section>
+<hr class="docutils" />
+<section id="conclusao">
+<h2>✅ Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Parabéns por concluir esta aula!</p>
+<section id="o-que-aprendemos-hoje">
+<h3>🎯 O que aprendemos hoje?<a class="headerlink" href="#o-que-aprendemos-hoje" title="Link to this heading">#</a></h3>
+<p>Nesta aula, exploramos os principais conceitos e técnicas para manipulação de strings em Python. Aprendemos como criar, acessar e modificar strings utilizando diferentes métodos e abordagens, além de compreender a importância das strings na programação e em aplicações do mundo real.</p>
+</section>
+<section id="proximos-passos">
+<h3>📌 Próximos Passos<a class="headerlink" href="#proximos-passos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Resolva os problemas na seção “Exercícios para Praticar”.</p></li>
+<li><p>Experimentar diferentes abordagens para formatação e substituição de strings (de entrada do usuário)</p></li>
+</ul>
+</section>
+<section id="parabens-pela-dedicacao-nos-vemos-na-proxima-aula">
+<h3>Parabéns pela dedicação! Nos vemos na próxima aula!<a class="headerlink" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-base-py"
+        },
+        kernelOptions: {
+            name: "conda-base-py",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-base-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="estruturas-de-controle-loop.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fundamentos de Programação em Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="listas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fundamentos de Programação em Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontificia-universidade-catolica-de-campinas"><strong>Pontifícia Universidade Católica de Campinas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-denis-mayr-lima-martins"><strong>Prof. Dr. Denis Mayr Lima Martins</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-strings">📝 Manipulação de Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-de-strings-em-python">Indexação de Strings em Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-em-strings-cortando-e-manuseando-secoes">Slicing em Strings: Cortando e Manuseando Seções</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-manipulacao-de-strings">Métodos de Manipulação de Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upper-e-lower"><strong>upper()</strong> e <strong>lower()</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strip-lstrip-e-rstrip"><strong>strip()</strong>, <strong>lstrip()</strong> e <strong>rstrip()</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-de-strings"><strong>Concatenação de Strings (+)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeticao-de-strings">Repetição de Strings (*)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-e-join"><strong>split()</strong> e <strong>join()</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitlines"><strong>splitlines()</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><strong>replace()</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-Strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-strings-com-loops">Percorrendo Strings com Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">📝 <strong>Exercícios para Praticar</strong>:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr. Denis M. L. Martins
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

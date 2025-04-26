@@ -1,0 +1,1056 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fundamentos de Programação em Python &#8212; Fundamentos de Programação em Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/variaveis-tipos-dados';</script>
+    <link rel="canonical" href="https://denmartins.github.io/fundamentos-python-book/book/variaveis-tipos-dados.html" />
+    <link rel="icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fundamentos de Programação em Python" href="estruturas-de-controle-loop.html" />
+    <link rel="prev" title="Fundamentos de Programação em Python" href="conceitos-basicos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Fundamentos de Programação em Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Fundamentos de Programação em Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="conceitos-basicos.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estruturas-de-controle-loop.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Fundamentos de Programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Fundamentos de Programação em Python</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/denmartins/fundamentos-python-book/master?urlpath=tree/book/variaveis-tipos-dados.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/denmartins/fundamentos-python-book/blob/master/book/variaveis-tipos-dados.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/edit/main/book/variaveis-tipos-dados.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/issues/new?title=Issue%20on%20page%20%2Fbook/variaveis-tipos-dados.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/variaveis-tipos-dados.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fundamentos de Programação em Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontificia-universidade-catolica-de-campinas"><strong>Pontifícia Universidade Católica de Campinas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-denis-mayr-lima-martins"><strong>Prof. Dr. Denis Mayr Lima Martins</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-e-tipos-de-dados-em-python">📝 Variáveis e Tipos de Dados em Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-em-python">📑 Variáveis em Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nomes-de-variaveis">🏷️ Nomes de variáveis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#palavras-reservadas">Palavras Reservadas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados">📊 Tipos de dados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversao-de-tipos-type-casting">Conversão de Tipos (Type Casting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-input">⌨ Função <code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conteudo-adicional">Conteúdo adicional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="fundamentos-de-programacao-em-python">
+<h1>Fundamentos de Programação em Python<a class="headerlink" href="#fundamentos-de-programacao-em-python" title="Link to this heading">#</a></h1>
+<section id="pontificia-universidade-catolica-de-campinas">
+<h2><strong>Pontifícia Universidade Católica de Campinas</strong><a class="headerlink" href="#pontificia-universidade-catolica-de-campinas" title="Link to this heading">#</a></h2>
+</section>
+<section id="prof-dr-denis-mayr-lima-martins">
+<h2><strong>Prof. Dr. Denis Mayr Lima Martins</strong><a class="headerlink" href="#prof-dr-denis-mayr-lima-martins" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+</section>
+<section id="variaveis-e-tipos-de-dados-em-python">
+<h2>📝 Variáveis e Tipos de Dados em Python<a class="headerlink" href="#variaveis-e-tipos-de-dados-em-python" title="Link to this heading">#</a></h2>
+<p>Bem-vindo à nossa primeira aula prática de <strong>Fundamentos de Programação em Python</strong>!</p>
+<p>Nesta aula, exploraremos os conceitos fundamentais de <strong>variáveis</strong>, <strong>tipos de dados</strong> e <strong>operadores matemáticos</strong>.</p>
+<p><strong>📌 O que veremos hoje?</strong></p>
+<ul class="simple">
+<li><p>O que são <strong>variáveis</strong> e como armazenam informações em Python.</p></li>
+<li><p>Os principais <strong>tipos de dados</strong>: inteiros (<code class="docutils literal notranslate"><span class="pre">int</span></code>), números decimais (<code class="docutils literal notranslate"><span class="pre">float</span></code>), textos (<code class="docutils literal notranslate"><span class="pre">str</span></code>), valores booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>), entre outros.</p></li>
+<li><p>Como utilizar <strong>operadores matemáticos</strong> para realizar cálculos simples.</p></li>
+<li><p>A importância da conversão entre tipos de dados.</p></li>
+</ul>
+<p>💡 <strong>Dica:</strong> Python é uma linguagem dinâmica, ou seja, não precisamos especificar o tipo da variável ao declará-la! Vamos entender isso melhor na prática.</p>
+<p><strong>🎯 Objetivos de Aprendizagem</strong></p>
+<p>Ao final desta aula, você será capaz de:</p>
+<ul class="simple">
+<li><p>Compreender o conceito de <strong>variáveis</strong> e seu papel na programação.</p></li>
+<li><p>Identificar e utilizar corretamente os principais <strong>tipos de dados</strong> em Python (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>).</p></li>
+<li><p>Aplicar <strong>operadores matemáticos</strong> (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>) para realizar cálculos e manipular dados.</p></li>
+<li><p>Diferenciar e converter tipos de dados utilizando funções como <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">str()</span></code>, entre outras.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="variaveis-em-python">
+<h2>📑 Variáveis em Python<a class="headerlink" href="#variaveis-em-python" title="Link to this heading">#</a></h2>
+<p>Em programação, uma variável é um espaço na memória que armazena um valor. Ou seja, as variáveis são contêineres usados para armazenar valores de dados que podem mudar à medida que o programa é executado.</p>
+<p>Em Python, uma variável pode ser declarada sem a necessidade de definir seu tipo explicitamente.</p>
+<p>O <strong>comando de atribuição</strong> cria novas variáveis e dá a elas valores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>  
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">idade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># O que vai aparecer aqui?</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># Isso acontece pois os dois comandos sao recebidos, mas o último que fica gravado.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="nomes-de-variaveis">
+<h3>🏷️ Nomes de variáveis<a class="headerlink" href="#nomes-de-variaveis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Nomes Significativos:</strong> Programadores escolhem nomes descritivos para variáveis, pois isso facilita a compreensão do código.</p></li>
+<li><p><strong>Comprimento do Nome:</strong> Nomes de variáveis podem ser longos e conter letras e números, mas devem começar com uma letra (ou com o caractere <code class="docutils literal notranslate"><span class="pre">_</span></code>).</p></li>
+<li><p><strong>Maiúsculas e Minúsculas:</strong> Embora letras maiúsculas sejam permitidas, convenciona-se o uso de minúsculas. Python diferencia <code class="docutils literal notranslate"><span class="pre">Idade</span></code> e <code class="docutils literal notranslate"><span class="pre">idade</span></code>, pois é <em>case-sensitive</em>.</p></li>
+<li><p><strong>Uso do Sublinhado (<code class="docutils literal notranslate"><span class="pre">_</span></code>):</strong> O caractere <code class="docutils literal notranslate"><span class="pre">_</span></code> pode ser usado para separar palavras em nomes de variáveis, como <code class="docutils literal notranslate"><span class="pre">meu_nome</span></code> ou <code class="docutils literal notranslate"><span class="pre">preco_do_produto_na_china</span></code>.</p></li>
+<li><p><strong>Erros de Sintaxe:</strong> Atribuir um nome inválido a uma variável resultará em um erro de sintaxe.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_participants</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_of_participants</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numberOfParticipants</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numberOfParticipants</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Observe</strong> que os nomes das variáveis são <strong>sensíveis a maiúsculas e minúsculas</strong>.</p>
+<p>Portanto, <code class="docutils literal notranslate"><span class="pre">number_of_participants</span></code> é diferente de <code class="docutils literal notranslate"><span class="pre">Number_of_Participants</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crie uma nova variável chamada Number_of_Participants</span>
+<span class="n">Number_of_Participants</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Number_of_Participants</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">number_of_participants</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Lembrete</strong>: <code class="docutils literal notranslate"><span class="pre">print()</span></code> pode mostrar vários valores separados por vírgulas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Com letra minúscula é&#39;</span><span class="p">,</span> <span class="n">number_of_participants</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Com letra maiúscula é&#39;</span><span class="p">,</span> <span class="n">Number_of_Participants</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Test&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 1</strong>:</p>
+<ol class="arabic simple">
+<li><p>Declare três variáveis: <code class="docutils literal notranslate"><span class="pre">idade</span></code>, <code class="docutils literal notranslate"><span class="pre">peso</span></code> e <code class="docutils literal notranslate"><span class="pre">altura</span></code>.</p></li>
+<li><p>Exiba seus valores usando <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
+<li><p>Calcule o Índice de Massa Corporal usando as variáveis peso e altura. <span class="math notranslate nohighlight">\(IMC = \frac{peso}{altura^2}\)</span></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua resposta aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 2</strong>:</p>
+<ol class="arabic simple">
+<li><p>Calcule a área de um retângulo usando valores armazenados nas variáveis <code class="docutils literal notranslate"><span class="pre">lado_1</span></code> e <code class="docutils literal notranslate"><span class="pre">lado_2</span></code>.</p></li>
+<li><p>Exiba o valor da área calculada usando <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua resposta aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="palavras-reservadas">
+<h3>Palavras Reservadas<a class="headerlink" href="#palavras-reservadas" title="Link to this heading">#</a></h3>
+<p>Em Python, palavras reservadas são identificadores especiais que fazem parte da sintaxe da linguagem e não podem ser usados como nomes de variáveis, funções ou identificadores personalizados. Elas são essenciais para a estrutura do código, representando comandos e instruções como <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">def</span></code>, <code class="docutils literal notranslate"><span class="pre">return</span></code>, entre outras. Como Python é <em>case-sensitive</em>, palavras reservadas devem ser usadas <strong>exatamente</strong> como definidas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="tipos-de-dados">
+<h2>📊 Tipos de dados<a class="headerlink" href="#tipos-de-dados" title="Link to this heading">#</a></h2>
+<p>Python possui diversos tipos de dados. Os principais são:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> → números inteiros (ex: 10, -25)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> → números de ponto flutuante, decimais (ex: 3.14, -0.75)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code> → textos (ex: “Python”, ‘Curso’)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> → valores lógicos (ex: True, False)</p></li>
+</ul>
+<p>Exemplos no código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numero_inteiro</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">numero_decimal</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Hello, Python!&quot;</span>
+<span class="n">verdadeiro</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>No Python as variáveis são fracamente tipadas. É possível mudar o tipo da variável conforme vai executando o código, mas se reescrever a variável e mudar o tipo dela você pode ter problemas com seu código.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificar o tipo de dados inteiro (int)</span>
+<span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># É possível digitar type para descobrir o tipo do seu dado</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type(5)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificar o tipo de dados float</span>
+<span class="c1"># type(3.14)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Qual é esse tipo de dados?</span>
+<span class="nb">type</span><span class="p">(</span><span class="mi">123812983718</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Qual é esse tipo de dados?</span>
+<span class="nb">type</span><span class="p">(</span><span class="mf">231231232.189029</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificar o tipo de dados string</span>
+<span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificar o tipo de dados booleanos</span>
+<span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📝 <strong>Exercício 2</strong>:</p>
+<p>Verifique os valores produzidos pelas seguintes operações (o resultado da operação), e também seus respectivos tipos de dados:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">10*2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2**10</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">//</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'bom'</span> <span class="pre">+</span> <span class="pre">'dia'</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua resposta aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="conversao-de-tipos-type-casting">
+<h3>Conversão de Tipos (Type Casting)<a class="headerlink" href="#conversao-de-tipos-type-casting" title="Link to this heading">#</a></h3>
+<p>Às vezes, é necessário converter um tipo de dado para outro. Python permite conversões com:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int()</span></code> → Converte para inteiro</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float()</span></code> → Converte para número decimal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str()</span></code> → Converte para string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool()</span></code> → Converte para booleano</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verifique o tipo de dado. Observe as aspas</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="s2">&quot;20&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Converter string para número inteiro (int)</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="s2">&quot;20&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Converter string em float</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="s2">&quot;3.14&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verifique o tipo de dados</span>
+<span class="n">num_produtos_no_estoque</span> <span class="o">=</span> <span class="mi">10_000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Converter inteiro em string (str)</span>
+<span class="n">num_produtos_no_estoque</span> <span class="o">=</span> <span class="mi">10_000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Converter float em inteiro</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Converter inteiro em booleano</span>
+<span class="n">verdadeiro</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📝 <strong>Exercício 3</strong>:</p>
+<p>Realize as seguintes operações.</p>
+<ol class="arabic simple">
+<li><p>Converta <code class="docutils literal notranslate"><span class="pre">15.0</span></code> em <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
+<li><p>Converta <code class="docutils literal notranslate"><span class="pre">1.234</span></code> em <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p></li>
+<li><p>Converta <code class="docutils literal notranslate"><span class="pre">35</span></code> em <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua resposta aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funcao-input">
+<h3>⌨ Função <code class="docutils literal notranslate"><span class="pre">input()</span></code><a class="headerlink" href="#funcao-input" title="Link to this heading">#</a></h3>
+<p>A função <code class="docutils literal notranslate"><span class="pre">input()</span></code> em Python é utilizada para receber dados do usuário durante a execução do programa. Ela permite que o usuário digite um valor, que é retornado como uma string por padrão. Se necessário, o dado pode ser convertido para outros tipos, como inteiro (<code class="docutils literal notranslate"><span class="pre">int()</span></code>) ou decimal (<code class="docutils literal notranslate"><span class="pre">float()</span></code>).</p>
+<p>É comum usar <code class="docutils literal notranslate"><span class="pre">input()</span></code> para interações básicas, como solicitar nomes, números ou escolhas em um menu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Desenvolva um programa que pergunte o seu nome</span>
+<span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Qual é o seu nome? &#39;</span><span class="p">)</span>
+<span class="c1"># Depois de rodar o código, lembre de colocar a informacao pedida e apertar enter</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá,&quot;</span><span class="p">,</span> <span class="n">nome</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📝 <strong>Exercício 4</strong>:</p>
+<p>Peça ao usuário para digitar o ano de nascimento e calcule sua idade atual.</p>
+<p>📌 Passos:</p>
+<ol class="arabic simple">
+<li><p>Solicite o ano de nascimento com <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</p></li>
+<li><p>Converta a entrada para um número inteiro.</p></li>
+<li><p>Calcule a idade subtraindo o ano de nascimento do ano atual.</p></li>
+<li><p>Exiba a idade na tela.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua resposta aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📝 <strong>Exercícios para Praticar</strong>:</p>
+<ul class="simple">
+<li><p>1️⃣ <strong>Nível Fácil</strong>: Média de três números</p>
+<ol class="arabic simple">
+<li><p>Peça ao usuário três números.</p></li>
+<li><p>Calcule e exiba a média aritmética.</p></li>
+</ol>
+</li>
+<li><p>2️⃣ <strong>Nível Médio</strong>: Crie um programa que converta uma temperatura de Celsius para Fahrenheit.</p>
+<ol class="arabic simple">
+<li><p>Peça ao usuário a temperatura em graus Celsius com input().</p></li>
+<li><p>Converta o valor para float, caso o usuário insira números decimais.</p></li>
+<li><p>Use a fórmula <span class="math notranslate nohighlight">\(F = (C × 9/5) + 32\)</span> para converter.</p></li>
+<li><p>Exiba a temperatura convertida.</p></li>
+</ol>
+</li>
+<li><p>3️⃣ <strong>Nível Avançado</strong>: Dias para anos e meses</p>
+<ol class="arabic simple">
+<li><p>Peça ao usuário um número de dias e converta para anos, meses e dias restantes.</p></li>
+<li><p>Considere 1 ano = 365 dias e 1 mês = 30 dias.</p></li>
+</ol>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione suas respostas aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conclusao">
+<h2>✅ Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Parabéns por concluir esta aula!</p>
+<section id="o-que-aprendemos-hoje">
+<h3>🎯 O que aprendemos hoje?<a class="headerlink" href="#o-que-aprendemos-hoje" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>O que são variáveis e como usá-las.</p></li>
+<li><p>Principais tipos de dados em Python.</p></li>
+<li><p>Como converter tipos de dados corretamente.</p></li>
+<li><p>Como interagir com o usuário de maneira simples.</p></li>
+</ul>
+<p>Agora você já pode criar pequenos programas e manipular dados com Python!</p>
+</section>
+</section>
+<section id="proximos-passos">
+<h2>📌 Próximos Passos<a class="headerlink" href="#proximos-passos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Resolva os problemas na seção “Exercícios para Praticar”.</p></li>
+<li><p>Caso tenha dúvidas, revise os exemplos e experimente modificá-los. A programação se aprende na prática!</p></li>
+</ul>
+<section id="conteudo-adicional">
+<h3>Conteúdo adicional<a class="headerlink" href="#conteudo-adicional" title="Link to this heading">#</a></h3>
+<p>🎉 Explore o Python Tutor: <a class="reference external" href="https://pythontutor.com/python-compiler.html">https://pythontutor.com/python-compiler.html</a></p>
+</section>
+<section id="parabens-pela-dedicacao-nos-vemos-na-proxima-aula">
+<h3>Parabéns pela dedicação! Nos vemos na próxima aula!<a class="headerlink" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="conceitos-basicos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fundamentos de Programação em Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="estruturas-de-controle-loop.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fundamentos de Programação em Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pontificia-universidade-catolica-de-campinas"><strong>Pontifícia Universidade Católica de Campinas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prof-dr-denis-mayr-lima-martins"><strong>Prof. Dr. Denis Mayr Lima Martins</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-e-tipos-de-dados-em-python">📝 Variáveis e Tipos de Dados em Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-em-python">📑 Variáveis em Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nomes-de-variaveis">🏷️ Nomes de variáveis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#palavras-reservadas">Palavras Reservadas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados">📊 Tipos de dados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversao-de-tipos-type-casting">Conversão de Tipos (Type Casting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-input">⌨ Função <code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conteudo-adicional">Conteúdo adicional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr. Denis M. L. Martins
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
