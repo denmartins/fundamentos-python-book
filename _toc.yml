@@ -9,6 +9,7 @@ chapters:
   - file: book/estruturas-de-controle-loop
   - file: book/strings
   - file: book/listas
+  - file: book/dicionarios
   # - file: book/markdown
   # - file: book/notebooks
   # - file: book/bibliography
