@@ -1,10 +1,12 @@
 # Fundamentos de Programação em Python
 
-**Bem-vindo(a) ao material dedicado à disciplina de Linguagem de Programação em Python!**
+**Bem-vindo(a) ao material dedicado à disciplina de Fundamentos de Programação em Python!**
 
-O curso tem como objetivo capacitar os alunos nos conceitos essenciais da programação, desde os princípios básicos até a introdução a estruturas de dados. Serão abordados conceitos fundamentais de informática, descrição de algoritmos por meio de pseudocódigo, fluxogramas e linguagem de programação, além do desenvolvimento da lógica de programação.
+Este material foi projetado no contexto da disciplina de Fundamentos de Programação em Python, do curso de graduação em [Ciência de Dados e Inteligência Artificial Pontifícia Universidade Católica de Campinas](https://www.puc-campinas.edu.br/graduacao/ciencia-de-dados-e-inteligencia-artificial/), para fornecer uma base sólida na linguagem Python, uma das mais populares e versáteis do mundo. 
 
-Este material foi projetado para fornecer uma base sólida na linguagem Python, uma das mais populares e versáteis do mundo. Seja você um iniciante completo ou alguém com alguma experiência em programação, este material irá guiá-lo(a) através dos conceitos fundamentais da linguagem e suas aplicações práticas.
+A disciplina visa capacitar os alunos do curso nos conceitos essenciais da programação, desde os princípios básicos até a introdução a estruturas de dados.
+
+Seja você um iniciante completo ou alguém com alguma experiência em programação, este material irá guiá-lo(a) através dos conceitos fundamentais da linguagem e suas aplicações práticas.
 
 **O que você aprenderá:**
 
@@ -22,6 +24,6 @@ Este material foi projetado para fornecer uma base sólida na linguagem Python, 
 *   Exercícios práticos para consolidar o aprendizado.
 *   Links para documentação oficial do Python: [https://docs.python.org/3/](https://docs.python.org/3/)
 
-**Objetivo:** Ao final deste curso, você estará apto(a) a escrever programas simples em Python e a compreender os princípios básicos da programação.
+**Objetivo:** Ao final da disciplina, você estará apto(a) a escrever programas simples em Python e a compreender os princípios básicos da programação.
 
 **Vamos começar!**
