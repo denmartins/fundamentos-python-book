@@ -466,11 +466,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">Exercícios para Praticar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">O que aprendemos hoje?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conteudo-adicional">Conteúdo adicional</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a></li>
 </ul>
 </li>
 </ul>
@@ -785,7 +781,7 @@ para a direita. Enquanto isso, nos operadores lógicos seguimos a seguinte ordem
 </div>
 </div>
 </div>
-<p>💡 <strong>Dica:</strong> Uma maneira melhor de escrever o código acima é omitir a parte <code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">True</span></code>:</p>
+<p><strong>Dica:</strong> Uma maneira melhor de escrever o código acima é omitir a parte <code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">True</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hoje_e_domingo</span> <span class="o">=</span> <span class="kc">False</span>
@@ -816,7 +812,7 @@ para a direita. Enquanto isso, nos operadores lógicos seguimos a seguinte ordem
 </div>
 </div>
 </div>
-<p>💡 <strong>Importante:</strong> Na prática, não importa o que seja colocado dentro da área de condições, desde que o resultado seja um booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<p><strong>Importante:</strong> Na prática, não importa o que seja colocado dentro da área de condições, desde que o resultado seja um booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite sua idade: &quot;</span><span class="p">))</span>
@@ -854,7 +850,7 @@ para a direita. Enquanto isso, nos operadores lógicos seguimos a seguinte ordem
 </div>
 </div>
 </div>
-<p>📖 <strong>Exercício 2</strong>: Implemente um algoritmo que dada a idade de um nadador (lida do teclado) imprime a categoria na qual ele está:</p>
+<p><strong>Exercício 2</strong>: Implemente um algoritmo que dada a idade de um nadador (lida do teclado) imprime a categoria na qual ele está:</p>
 <ul class="simple">
 <li><p>infantil A = 5 - 7 anos</p></li>
 <li><p>infantil B = 8-10 anos</p></li>
@@ -1072,7 +1068,7 @@ para a direita. Enquanto isso, nos operadores lógicos seguimos a seguinte ordem
 </div>
 </div>
 </div>
-<p>📖 <strong>Exercício 3</strong>:</p>
+<p><strong>Exercício 3</strong>:</p>
 <ol class="arabic simple">
 <li><p>Crie um programa que pergunte ao usuário por um número e, em seguida, peça se ele deseja
 multiplicar esse número por uma sequência de números inteiros a partir de 1. Por exemplo, se o
@@ -1184,24 +1180,26 @@ usuário digita 5, o programa deve imprimir 5 + 10 + 15 + 20.</p></li>
 </section>
 <section id="exercicios-para-praticar">
 <h2>Exercícios para Praticar<a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
-<p><strong>Nível Fácil</strong>: Escreva um programa que solicita ao usuário uma palavra e conta quantas vogais e consoantes ela possui.</p>
-<p><strong>Requisitos:</strong></p>
+<ol class="arabic">
+<li><p>Escreva um programa que solicita ao usuário uma palavra e conta quantas vogais e consoantes ela possui.</p>
 <ul class="simple">
 <li><p>Utilize um loop <code class="docutils literal notranslate"><span class="pre">for</span></code> para percorrer a string.</p></li>
 <li><p>Utilize condições (<code class="docutils literal notranslate"><span class="pre">if</span></code>) para verificar se um caractere é uma vogal ou consoante.</p></li>
 <li><p>Considere apenas letras (ignore espaços, números e caracteres especiais).</p></li>
 </ul>
-<p><strong>Nível Médio</strong>: Crie um programa que solicita um número inteiro positivo ao usuário e calcula a <strong>soma de seus dígitos</strong>.</p>
-<p><strong>Requisitos:</strong></p>
+</li>
+<li><p>Crie um programa que solicita um número inteiro positivo ao usuário e calcula a <strong>soma de seus dígitos</strong>.</p>
 <ul class="simple">
 <li><p>Utilize um <strong>loop <code class="docutils literal notranslate"><span class="pre">while</span></code></strong> para extrair os dígitos do número.</p></li>
 <li><p>Utilize um operador matemático para obter o último dígito (<code class="docutils literal notranslate"><span class="pre">%</span></code>).</p></li>
 </ul>
-<p><strong>Exemplo de Entrada e Saída:</strong></p>
+<p>Exemplo de Entrada e Saída:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Digite</span> <span class="n">um</span> <span class="n">número</span><span class="p">:</span> <span class="mi">1234</span>
 <span class="n">A</span> <span class="n">soma</span> <span class="n">dos</span> <span class="n">dígitos</span> <span class="n">é</span><span class="p">:</span> <span class="mi">10</span>  <span class="c1"># (1 + 2 + 3 + 4) </span>
 </pre></div>
 </div>
+</li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione suas respostas aqui</span>
@@ -1213,7 +1211,6 @@ usuário digita 5, o programa deve imprimir 5 + 10 + 15 + 20.</p></li>
 <hr class="docutils" />
 <section id="conclusao">
 <h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
-<p>Parabéns por concluir esta aula!</p>
 <section id="o-que-aprendemos-hoje">
 <h3>O que aprendemos hoje?<a class="headerlink" href="#o-que-aprendemos-hoje" title="Link to this heading">#</a></h3>
 <p>Nesta aula, exploramos conceitos fundamentais para controlar o fluxo de um programa em <strong>Python</strong>:</p>
@@ -1223,19 +1220,13 @@ usuário digita 5, o programa deve imprimir 5 + 10 + 15 + 20.</p></li>
 <li><p>A diferença entre <strong>iteração controlada</strong> (<code class="docutils literal notranslate"><span class="pre">for</span></code>) e <strong>iteração condicional</strong> (<code class="docutils literal notranslate"><span class="pre">while</span></code>).</p></li>
 </ul>
 </section>
-</section>
 <section id="proximos-passos">
-<h2>Próximos Passos<a class="headerlink" href="#proximos-passos" title="Link to this heading">#</a></h2>
+<h3>Próximos Passos<a class="headerlink" href="#proximos-passos" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Resolva os problemas na seção “Exercícios para Praticar”.</p></li>
 <li><p>Caso tenha dúvidas, revise os exemplos e experimente modificá-los. A programação se aprende na prática!</p></li>
+<li><p>Leia mais sobre estruturas de controle na <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html">documentação oficial de python</a></p></li>
 </ul>
-<section id="conteudo-adicional">
-<h3>Conteúdo adicional<a class="headerlink" href="#conteudo-adicional" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html">Documentação Oficial do Python – Estruturas de Controle</a></p>
-</section>
-<section id="parabens-pela-dedicacao-nos-vemos-na-proxima-aula">
-<h3>Parabéns pela dedicação! Nos vemos na próxima aula!<a class="headerlink" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula" title="Link to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -1329,11 +1320,7 @@ usuário digita 5, o programa deve imprimir 5 + 10 + 15 + 20.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">Exercícios para Praticar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">O que aprendemos hoje?</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conteudo-adicional">Conteúdo adicional</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a></li>
 </ul>
 </li>
 </ul>
