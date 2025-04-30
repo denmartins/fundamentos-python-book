@@ -2,7 +2,7 @@
 
 **Bem-vindo(a) ao material dedicado à disciplina de Fundamentos de Programação em Python!**
 
-Este material foi projetado no contexto da disciplina de Fundamentos de Programação em Python, do curso de graduação em [Ciência de Dados e Inteligência Artificial Pontifícia Universidade Católica de Campinas](https://www.puc-campinas.edu.br/graduacao/ciencia-de-dados-e-inteligencia-artificial/), para fornecer uma base sólida na linguagem Python, uma das mais populares e versáteis do mundo. 
+Este material foi projetado no contexto da disciplina de Fundamentos de Programação em Python, do curso de graduação em [Ciência de Dados e Inteligência Artificial da Pontifícia Universidade Católica de Campinas](https://www.puc-campinas.edu.br/graduacao/ciencia-de-dados-e-inteligencia-artificial/), para fornecer uma base sólida na linguagem Python, uma das mais populares e versáteis do mundo. 
 
 A disciplina visa capacitar os alunos do curso nos conceitos essenciais da programação, desde os princípios básicos até a introdução a estruturas de dados.
 
