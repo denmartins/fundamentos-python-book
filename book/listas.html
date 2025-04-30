@@ -447,10 +447,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-elementos">Acessando Elementos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-uma-lista-com-loops">Percorrendo uma lista com loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-sao-mutaveis">Listas são Mutáveis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas">Operações básicas</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-sao-mutaveis">Listas são Mutáveis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas">Operações básicas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List Comprehensions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong>:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
@@ -708,8 +706,9 @@ document.write(`
 <li><p>b) Substitua o terceiro número.</p></li>
 <li><p>c) Remova o primeiro e o segundo número.</p></li>
 </ul>
+</section>
 <section id="operacoes-basicas">
-<h3>Operações básicas<a class="headerlink" href="#operacoes-basicas" title="Link to this heading">#</a></h3>
+<h2>Operações básicas<a class="headerlink" href="#operacoes-basicas" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Novo exemplo de lista</span>
@@ -832,7 +831,6 @@ document.write(`
 </div>
 </div>
 </section>
-</section>
 <section id="list-comprehensions">
 <h2>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Link to this heading">#</a></h2>
 <p><em>List comprehensions</em> em Python são uma forma concisa e elegante de criar listas a partir de outras coleções de dados iteráveis (como listas, tuplas, ranges, etc.). Pense nelas como um atalho para escrever loops <code class="docutils literal notranslate"><span class="pre">for</span></code> que criam listas de forma rápida.</p>
@@ -881,25 +879,34 @@ document.write(`
 <section id="exercicios-para-praticar">
 <h2><strong>Exercícios para Praticar</strong>:<a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">is_sorted</span></code> que tome uma lista como parâmetro e retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> se a lista estiver classificada em ordem ascendente, e <code class="docutils literal notranslate"><span class="pre">False</span></code> se não for o caso. Por exemplo:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_sorted</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># Saída: True</span>
-<span class="n">is_sorted</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span> <span class="c1"># Saída: False</span>
-</pre></div>
-</div>
-</li>
-<li><p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">soma_cumulativa</span></code> que receba uma lista de números e retorne a soma cumulativa; isto é, uma nova lista onde o i-ésimo elemento é a soma dos primeiros <code class="docutils literal notranslate"><span class="pre">i+1</span></code> elementos da lista original. Por exemplo:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">soma_cumulativa</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="c1"># Saída: [1, 3, 6]</span>
-</pre></div>
-</div>
-</li>
+<li><p>Crie uma função que recebe uma lista e retorna uma nova lista os elementos da lista original em ordem reversa, sem utilizar métodos embutidos como <code class="docutils literal notranslate"><span class="pre">reverse()</span></code>.</p></li>
 <li><p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">tem_duplicados</span></code> que tome uma lista e retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> se houver algum elemento que apareça mais de uma vez, caso contrário retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>. Ela não deve modificar a lista original.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tem_duplicados</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># Saída: True</span>
 <span class="n">tem_duplicados</span><span class="p">([</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span> <span class="c1"># Saída: False</span>
 </pre></div>
 </div>
 </li>
+<li><p>Assuma que você é o professor responsável por gerenciar as notas dos alunos em uma disciplina. Você tem uma lista de listas, onde cada sublista representa um aluno e contém suas notas em diferentes provas.</p></li>
 </ol>
+<ul>
+<li><p><strong>Tarefa:</strong> Escreva um programa Python que realize as seguintes análises sobre as notas:</p>
+<ol class="arabic simple">
+<li><p>Calcule a média das notas de cada aluno.</p></li>
+<li><p>Identifique o aluno com a maior nota média.</p></li>
+<li><p>Imprima o nome do aluno com a maior nota média e sua respectiva média.</p></li>
+<li><p>Calcule a média geral de todas as notas da disciplina.</p></li>
+</ol>
+</li>
+<li><p><strong>Dados de Entrada:</strong> A lista de listas estará no seguinte formato:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">notas_alunos</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mf">8.5</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">],</span> <span class="c1"># Aluno 1 (Matemática, Português, História)</span>
+    <span class="p">[</span><span class="mf">9.2</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">],</span> <span class="c1"># Aluno 2</span>
+    <span class="p">[</span><span class="mf">7.0</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">]</span>  <span class="c1"># Aluno 3</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="conclusao">
@@ -992,10 +999,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acessando-elementos">Acessando Elementos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-uma-lista-com-loops">Percorrendo uma lista com loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-sao-mutaveis">Listas são Mutáveis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas">Operações básicas</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-sao-mutaveis">Listas são Mutáveis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas">Operações básicas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List Comprehensions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong>:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">

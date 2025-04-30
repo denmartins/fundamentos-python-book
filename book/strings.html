@@ -441,11 +441,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-de-strings-em-python">Indexação de Strings em Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-em-strings-cortando-e-manuseando-secoes">Slicing em Strings: Cortando e Manuseando Seções</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-de-strings-em-python">Indexação de Strings em Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-em-strings-cortando-e-manuseando-secoes">Slicing em Strings: Cortando e Manuseando Seções</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-manipulacao-de-strings">Métodos de Manipulação de Strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upper-e-lower"><strong>upper()</strong> e <strong>lower()</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strip-lstrip-e-rstrip"><strong>strip()</strong>, <strong>lstrip()</strong> e <strong>rstrip()</strong></a></li>
@@ -454,14 +452,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com Strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-de-strings"><strong>Concatenação de Strings (+)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeticao-de-strings">Repetição de Strings (*)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-e-join"><strong>split()</strong> e <strong>join()</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitlines"><strong>splitlines()</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><strong>replace()</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-e-join">split() e join()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitlines">splitlines()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace">replace()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find">find()</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-strings-com-loops">Percorrendo Strings com Loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">Exercícios para Praticar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">O que aprendemos hoje?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a></li>
@@ -525,8 +524,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section id="indexacao-de-strings-em-python">
-<h3>Indexação de Strings em Python<a class="headerlink" href="#indexacao-de-strings-em-python" title="Link to this heading">#</a></h3>
+<h2>Indexação de Strings em Python<a class="headerlink" href="#indexacao-de-strings-em-python" title="Link to this heading">#</a></h2>
 <p>Indexação é uma técnica fundamental ao lidar com strings em Python. Ela
 permite acessar ou modificar individualmente os caracteres dentro de uma
 string. No contexto das strings, o termo “index” se refere à posição do
@@ -557,7 +557,7 @@ em 0, o que significa que o primeiro caractere da string tem um índice de 0.</p
 </div>
 </section>
 <section id="slicing-em-strings-cortando-e-manuseando-secoes">
-<h3>Slicing em Strings: Cortando e Manuseando Seções<a class="headerlink" href="#slicing-em-strings-cortando-e-manuseando-secoes" title="Link to this heading">#</a></h3>
+<h2>Slicing em Strings: Cortando e Manuseando Seções<a class="headerlink" href="#slicing-em-strings-cortando-e-manuseando-secoes" title="Link to this heading">#</a></h2>
 <p>O conceito de “slicing” (ou corte) é uma ferramenta poderosa em
 programação, especialmente quando lidamos com sequências de dados como
 strings. Em Python, a operação de slicing permite que você extraia ou
@@ -582,7 +582,7 @@ omitido, o corte continua até o fim da string.</p></li>
 </div>
 </div>
 </div>
-<p>📖 <strong>Exercício 1</strong>:</p>
+<p><strong>Exercício 1</strong>:</p>
 <ol class="arabic simple">
 <li><p>Obtenha os caracteres “y”, “t”, “h” da string “Python”.</p></li>
 <li><p>Use slicing para extrair apenas os últimos 4 caracteres de uma string passada pelo usuário.</p></li>
@@ -594,7 +594,6 @@ omitido, o corte continua até o fim da string.</p></li>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="metodos-de-manipulacao-de-strings">
 <h2>Métodos de Manipulação de Strings<a class="headerlink" href="#metodos-de-manipulacao-de-strings" title="Link to this heading">#</a></h2>
@@ -711,7 +710,7 @@ como fazer isso:</p>
 </div>
 </div>
 </div>
-<p>📖 <strong>Exercício 2</strong>: Faça um programa que concatene o nome, a idade, o RG, o CPF e a cidade do usuário. As informações do usuário devem ser obtidas pela função <code class="docutils literal notranslate"><span class="pre">input()</span></code></p>
+<p><strong>Exercício 2</strong>: Faça um programa que concatene o nome, a idade, o RG, o CPF e a cidade do usuário. As informações do usuário devem ser obtidas pela função <code class="docutils literal notranslate"><span class="pre">input()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
@@ -721,7 +720,7 @@ como fazer isso:</p>
 </div>
 </section>
 <section id="split-e-join">
-<h3><strong>split()</strong> e <strong>join()</strong><a class="headerlink" href="#split-e-join" title="Link to this heading">#</a></h3>
+<h3>split() e join()<a class="headerlink" href="#split-e-join" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>split([sep])</strong>: Divide a string em um lista de sub-strings, baseado no
 separador (padrão é espaço em branco).</p></li>
@@ -768,7 +767,7 @@ separador (padrão é espaço em branco).</p></li>
 </div>
 </section>
 <section id="splitlines">
-<h3><strong>splitlines()</strong><a class="headerlink" href="#splitlines" title="Link to this heading">#</a></h3>
+<h3>splitlines()<a class="headerlink" href="#splitlines" title="Link to this heading">#</a></h3>
 <p><strong>splitlines()</strong>: Divide a string em um lista, considerando cada linha
 como uma sub-string.</p>
 <div class="cell docutils container">
@@ -789,7 +788,7 @@ como uma sub-string.</p>
 </div>
 </section>
 <section id="replace">
-<h3><strong>replace()</strong><a class="headerlink" href="#replace" title="Link to this heading">#</a></h3>
+<h3>replace()<a class="headerlink" href="#replace" title="Link to this heading">#</a></h3>
 <p><strong>replace(old, new)</strong>: Substitui a ocorrência da string <code class="docutils literal notranslate"><span class="pre">old</span></code> por <code class="docutils literal notranslate"><span class="pre">new</span></code>.</p>
 <p><strong>Strings são imutáveis</strong>, o que significa que, uma vez criadas, seus valores não podem ser modificados diretamente.</p>
 <div class="cell docutils container">
@@ -800,7 +799,9 @@ como uma sub-string.</p>
 </div>
 </div>
 </div>
-<p><strong>find()</strong></p>
+</section>
+<section id="find">
+<h3>find()<a class="headerlink" href="#find" title="Link to this heading">#</a></h3>
 <p>O método <code class="docutils literal notranslate"><span class="pre">find()</span></code> é uma ferramenta poderosa em Python para localizar a
 primeira ocorrência de um caractere ou substring dentro de outra string.</p>
 <div class="cell docutils container">
@@ -818,8 +819,9 @@ primeira ocorrência de um caractere ou substring dentro de outra string.</p>
 </div>
 </div>
 </section>
+</section>
 <section id="f-strings">
-<h3>f-Strings<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h3>
+<h2>f-Strings<a class="headerlink" href="#f-strings" title="Link to this heading">#</a></h2>
 <p>Em Python 3.6+, você pode usar a sintaxe chamada “f-string” ou “formatted
 string literal” para criar strings formatadas de forma fácil e elegante.
 Aqui está uma visão geral rápida desta ferramenta poderosa!</p>
@@ -843,7 +845,7 @@ formato usual para especificar os valores dos dados.</p>
 </div>
 </div>
 </div>
-<p>📖 <strong>Exercício 3</strong>: Refaça o exercício 2 usando f-strings.</p>
+<p><strong>Exercício 3</strong>: Refaça o exercício 2 usando f-strings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
@@ -851,7 +853,6 @@ formato usual para especificar os valores dos dados.</p>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="percorrendo-strings-com-loops">
 <h2>Percorrendo Strings com Loops<a class="headerlink" href="#percorrendo-strings-com-loops" title="Link to this heading">#</a></h2>
@@ -920,7 +921,7 @@ palavra:</p>
 </section>
 <hr class="docutils" />
 <section id="exercicios-para-praticar">
-<h2><strong>Exercícios para Praticar</strong><a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
+<h2>Exercícios para Praticar<a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Nível Fácil</strong>: Escreva um programa que recebe uma string do usuário e verifica se a string é um palíndromo. Palíndromo é toda palavra ou frase que pode ser lida de trás para frente e que, independente da direção, mantém o seu sentido. Exemplos:</p></li>
 </ol>
@@ -1016,11 +1017,9 @@ palavra:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-de-strings-em-python">Indexação de Strings em Python</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-em-strings-cortando-e-manuseando-secoes">Slicing em Strings: Cortando e Manuseando Seções</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-de-strings-em-python">Indexação de Strings em Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-em-strings-cortando-e-manuseando-secoes">Slicing em Strings: Cortando e Manuseando Seções</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-manipulacao-de-strings">Métodos de Manipulação de Strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upper-e-lower"><strong>upper()</strong> e <strong>lower()</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strip-lstrip-e-rstrip"><strong>strip()</strong>, <strong>lstrip()</strong> e <strong>rstrip()</strong></a></li>
@@ -1029,14 +1028,15 @@ palavra:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-strings">Operações com Strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-de-strings"><strong>Concatenação de Strings (+)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeticao-de-strings">Repetição de Strings (*)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-e-join"><strong>split()</strong> e <strong>join()</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitlines"><strong>splitlines()</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><strong>replace()</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-e-join">split() e join()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitlines">splitlines()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace">replace()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find">find()</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-strings-com-loops">Percorrendo Strings com Loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">Exercícios para Praticar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">O que aprendemos hoje?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a></li>
