@@ -756,11 +756,32 @@ Pense em um catálogo telefônico – você procura uma pessoa pelo nome (chave)
 </li>
 </ul>
 <p><strong>3. Dicionário de Produtos:</strong></p>
-<ul class="simple">
+<ul>
 <li><p><strong>Objetivo:</strong> Simular um sistema simples de gerenciamento de produtos usando um dicionário.</p></li>
 <li><p><strong>Instruções:</strong></p>
-<ul>
-<li><p>Crie um dicionário onde as chaves são os nomes dos produtos (strings) e os valores são dicionários contendo informações sobre cada produto, como preço, quantidade em estoque e categoria.</p></li>
+<ul class="simple">
+<li><p>Crie um dicionário onde as chaves são os nomes dos produtos (strings) e os valores são dicionários contendo informações sobre cada produto, como preço, quantidade em estoque e categoria, conforme o exemplo abaixo:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">produtos</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Camiseta&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;preco&quot;</span><span class="p">:</span> <span class="mf">29.99</span><span class="p">,</span>
+            <span class="s2">&quot;quantidade_em_estoque&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s2">&quot;categoria&quot;</span><span class="p">:</span> <span class="s2">&quot;Vestuário&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Calça Jeans&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;preco&quot;</span><span class="p">:</span> <span class="mf">79.99</span><span class="p">,</span>
+            <span class="s2">&quot;quantidade_em_estoque&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="s2">&quot;categoria&quot;</span><span class="p">:</span> <span class="s2">&quot;Vestuário&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Livro Python para Iniciantes&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;preco&quot;</span><span class="p">:</span> <span class="mf">45.50</span><span class="p">,</span>
+            <span class="s2">&quot;quantidade_em_estoque&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+            <span class="s2">&quot;categoria&quot;</span><span class="p">:</span> <span class="s2">&quot;Livros&quot;</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Implemente funções para:</p>
 <ul>
 <li><p>Adicionar um novo produto ao dicionário.</p></li>
