@@ -10,6 +10,8 @@ chapters:
   - file: book/strings
   - file: book/listas
   - file: book/dicionarios
+  - file: book/tuplas
+  - file: book/conjuntos
   # - file: book/markdown
   # - file: book/notebooks
   # - file: book/bibliography
