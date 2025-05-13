@@ -1,0 +1,1093 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tuplas em Python &#8212; Fundamentos de Programação em Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/tuplas';</script>
+    <link rel="canonical" href="https://denmartins.github.io/fundamentos-python-book/book/tuplas.html" />
+    <link rel="icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Conjuntos (Sets) em Python" href="conjuntos.html" />
+    <link rel="prev" title="Dicionários em Python" href="dicionarios.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Fundamentos de Programação em Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Fundamentos de Programação em Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="conceitos-basicos.html">Introdução à linguagem Python e ao ambiente Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variaveis-tipos-dados.html">Variáveis e Tipos de Dados em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estruturas-de-controle-loop.html">Estruturas de Controle e Laços de Repetição</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Manipulação de Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dicionarios.html">Dicionários em Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tuplas em Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="conjuntos.html">Conjuntos (Sets) em Python</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/denmartins/fundamentos-python-book/master?urlpath=tree/book/tuplas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/denmartins/fundamentos-python-book/blob/master/book/tuplas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/edit/main/book/tuplas.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/issues/new?title=Issue%20on%20page%20%2Fbook/tuplas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/tuplas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tuplas em Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tuplas em Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizagem">Objetivos de Aprendizagem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas">Operações Básicas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-um-tuplas-em-um-loop">Percorrendo um Tuplas em um Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-built-in-do-python">Funções <em>built-in</em> do Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-tuplas-casos-de-uso-reais">Por Que Usar Tuplas? Casos de Uso Reais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking">Unpacking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-teoricos"><strong>Exercícios Teóricos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tuplas-em-python">
+<h1>Tuplas em Python<a class="headerlink" href="#tuplas-em-python" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="objetivos-de-aprendizagem">
+<h2>Objetivos de Aprendizagem<a class="headerlink" href="#objetivos-de-aprendizagem" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Ser capaz de definir corretamente uma tupla em Python, incluindo a criação de tuplas vazias e com um único elemento (compreendendo a importância da vírgula).</p></li>
+<li><p>Demonstrar compreensão do conceito de imutabilidade das tuplas e suas implicações.</p></li>
+<li><p>Compreender a descompactação de valores de uma tupla em variáveis individuais para melhorar a legibilidade do código.</p></li>
+</ul>
+</section>
+<section id="conceitos-fundamentais">
+<h2>Conceitos Fundamentais<a class="headerlink" href="#conceitos-fundamentais" title="Link to this heading">#</a></h2>
+<p>Em sua essência, uma tupla é uma sequência de itens. Pense nela como uma coleção de valores agrupados juntos sob um único nome. A grande diferença entre tuplas e listas (que já vimos) reside em um aspecto crucial: <strong>imutabilidade</strong>. Tuplas são imutáveis, o que significa que você não pode modificar seus elementos após a criação.</p>
+<p><strong>Sintaxe:</strong> Tuplas são definidas usando parênteses <code class="docutils literal notranslate"><span class="pre">()</span></code> e os itens são separados por vírgulas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupla_vazia</span> <span class="o">=</span> <span class="p">()</span> <span class="c1"># Tupla vazia</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tupla_vazia</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tupla_vazia</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>()
+&lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minha_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Olá&quot;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span>  <span class="c1"># Uma tupla com um inteiro, uma string e um float</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minha_tupla</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">minha_tupla</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, &#39;Olá&#39;, 3.14)
+&lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Cuidado</strong> ao criar uma tupla com apenas um elemento! Use uma vírgula no final para indicar explicitamente ao Python que você está criando uma tupla, mesmo que ela contenha apenas um valor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupla_unico_elemento</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,)</span> <span class="c1"># Tupla com apenas um elemento - a vírgula é essencial!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tupla_unico_elemento</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tupla_unico_elemento</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5,)
+&lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Sem a vírgula</strong>, Python interpretará a expressão como um valor simples entre parênteses, e não como uma tupla:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valor_simples</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valor_simples</span><span class="p">),</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">valor_simples</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operacoes-basicas">
+<h2>Operações Básicas<a class="headerlink" href="#operacoes-basicas" title="Link to this heading">#</a></h2>
+<p>Embora não possamos modificar o conteúdo de uma tupla, podemos realizar diversas operações:</p>
+<p><strong>Acesso aos Elementos:</strong> Assim como listas, acessamos elementos por índice (começando em 0):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minha_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Olá&quot;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minha_tupla</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># primeiro_elemento será 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minha_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># segundo_elemento será &quot;Olá&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+Olá
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Slicing:</strong> Podemos extrair partes de uma tupla usando slicing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minha_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minha_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># sub_tupla será (2, 3, 4)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Concatenação:</strong> Podemos combinar duas ou mais tuplas usando o operador <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupla1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">tupla2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">tupla_concatenada</span> <span class="o">=</span> <span class="n">tupla1</span> <span class="o">+</span> <span class="n">tupla2</span>  <span class="c1"># Cria uma nova tupla -&gt; tupla_concatenada será (1, 2, 3, 4)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tupla_concatenada</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Repetição:</strong> Podemos repetir uma tupla usando o operador <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="n">tupla_repetida</span> <span class="o">=</span> <span class="n">tupla</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># tupla_repetida será (1, 2, 1, 2, 1, 2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tupla_repetida</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 1, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Funções Built-in:</strong> <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code> e <code class="docutils literal notranslate"><span class="pre">sum()</span></code> também funcionam com tuplas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">meu_dicionario</span><span class="p">)</span> <span class="c1"># Saída: 3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="percorrendo-um-tuplas-em-um-loop">
+<h2>Percorrendo um Tuplas em um Loop<a class="headerlink" href="#percorrendo-um-tuplas-em-um-loop" title="Link to this heading">#</a></h2>
+<p>Vamos criar uma nova tupla e percorrê-la utilizando um loop <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minha_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">minha_tupla</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funcoes-built-in-do-python">
+<h2>Funções <em>built-in</em> do Python<a class="headerlink" href="#funcoes-built-in-do-python" title="Link to this heading">#</a></h2>
+<p><strong>Exemplo 1: <code class="docutils literal notranslate"><span class="pre">len()</span></code> - Obtendo o tamanho da Tupla</strong></p>
+<p>A função <code class="docutils literal notranslate"><span class="pre">len()</span></code> retorna o número de elementos em uma tupla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minha_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O tamanho da tupla é: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">minha_tupla</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Saída: O tamanho da tupla é: 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O tamanho da tupla é: 4
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo 2: <code class="docutils literal notranslate"><span class="pre">max()</span></code> - Encontrando o Maior Elemento</strong></p>
+<p>A função <code class="docutils literal notranslate"><span class="pre">max()</span></code> retorna o maior elemento em uma tupla (considerando a ordem de comparação natural para os tipos de dados presentes).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">maior_numero</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O maior número na tupla é: </span><span class="si">{</span><span class="n">maior_numero</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Saída: O maior número na tupla é: 20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O maior número na tupla é: 20
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo 3: <code class="docutils literal notranslate"><span class="pre">min()</span></code> - Encontrando o Menor Elemento</strong></p>
+<p>Similar a <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code> retorna o menor elemento da tupla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperaturas</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">menor_temperatura</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">temperaturas</span><span class="p">)</span>
+<span class="n">maior_temperatura</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">temperaturas</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A menor temperatura na tupla é: </span><span class="si">{</span><span class="n">menor_temperatura</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A maior temperatura na tupla é: </span><span class="si">{</span><span class="n">maior_temperatura</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A menor temperatura na tupla é: 15
+A maior temperatura na tupla é: 28
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo 4: <code class="docutils literal notranslate"><span class="pre">sum()</span></code> - Somando os Elementos (para Tuplas Numéricas)</strong></p>
+<p>A função <code class="docutils literal notranslate"><span class="pre">sum()</span></code> calcula a soma de todos os elementos numéricos em uma tupla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valores</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">soma_total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A soma dos valores na tupla é: </span><span class="si">{</span><span class="n">soma_total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Saída: A soma dos valores na tupla é: 15</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A soma dos valores na tupla é: 15
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo 5: <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> - Ordenando uma Tupla (sem modificar a original)</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">sorted()</span></code> retorna uma <em>nova</em> lista contendo todos os itens da tupla em ordem crescente. A tupla original permanece inalterada, pois as tuplas são imutáveis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">desordenado</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">ordenado</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">desordenado</span><span class="p">)</span>  <span class="c1"># Retorna uma lista ordenada</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tupla original: </span><span class="si">{</span><span class="n">desordenado</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Saída: Tupla original: (3, 1, 4, 1, 5, 9, 2, 6)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lista ordenada: </span><span class="si">{</span><span class="n">ordenado</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># Saída: Lista ordenada: [1, 1, 2, 3, 4, 5, 6, 9]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tupla original: (3, 1, 4, 1, 5, 9, 2, 6)
+Lista ordenada: [1, 1, 2, 3, 4, 5, 6, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Observações Importantes:</strong></p>
+<ul class="simple">
+<li><p>As funções <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code> e <code class="docutils literal notranslate"><span class="pre">sum()</span></code> geralmente requerem que todos os elementos da tupla sejam do mesmo tipo (ou tipos comparáveis).  Tentar usá-las com tipos incompatíveis resultará em um erro.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sorted()</span></code> é extremamente útil para ordenar dados, mas lembrem-se de que ela retorna uma <em>lista</em>, não uma tupla. Se você precisar manter a estrutura de tupla, precisará converter a lista resultante de volta para uma tupla usando <code class="docutils literal notranslate"><span class="pre">tuple()</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="por-que-usar-tuplas-casos-de-uso-reais">
+<h1>Por Que Usar Tuplas? Casos de Uso Reais<a class="headerlink" href="#por-que-usar-tuplas-casos-de-uso-reais" title="Link to this heading">#</a></h1>
+<p>A imutabilidade das tuplas oferece vantagens importantes:</p>
+<p><strong>Segurança dos Dados:</strong>  Garante que os dados não sejam alterados acidentalmente.</p>
+<p><strong>Eficiência:</strong> Tuplas são geralmente mais rápidas para acessar e iterar do que listas, pois o Python pode otimizar seu armazenamento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> minha_lista = [l for l in range(100000)]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.09 ms ± 2.2 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> minha_tupla = (x for x in range(100000))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>210 ns ± 3.51 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Chaves de Dicionários:</strong> As tuplas podem ser usadas como chaves em dicionários (listas não podem!). Isso porque as chaves de dicionário precisam ser imutáveis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dicionário onde as chaves são tuplas de coordenadas (x, y)</span>
+<span class="n">elementos_graficos</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span> <span class="s2">&quot;Botão&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">):</span> <span class="s2">&quot;Caixa de Texto&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">40</span><span class="p">):</span> <span class="s2">&quot;Imagem&quot;</span><span class="p">,</span>
+    <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span> <span class="s2">&quot;Rótulo&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acessando um elemento gráfico pela sua coordenada</span>
+<span class="n">elemento_na_posicao</span> <span class="o">=</span> <span class="n">elementos_graficos</span><span class="p">[(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O elemento na posição (50, 75) é: </span><span class="si">{</span><span class="n">elemento_na_posicao</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Saída: O elemento na posição (50, 75) é: Caixa de Texto</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O elemento na posição (50, 75) é: Caixa de Texto
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicionando um novo elemento gráfico em uma nova coordenada</span>
+<span class="n">elementos_graficos</span><span class="p">[(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&quot;Barra de Progresso&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dicionário atualizado: </span><span class="si">{</span><span class="n">elementos_graficos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dicionário atualizado: {(10, 20): &#39;Botão&#39;, (50, 75): &#39;Caixa de Texto&#39;, (120, 40): &#39;Imagem&#39;, (80, 100): &#39;Rótulo&#39;, (200, 150): &#39;Barra de Progresso&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificando se uma coordenada existe no dicionário</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span> <span class="ow">in</span> <span class="n">elementos_graficos</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A coordenada (30, 60) existe no dicionário.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A coordenada (30, 60) não existe no dicionário.&quot;</span><span class="p">)</span> <span class="c1"># Esta linha será executada.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A coordenada (30, 60) não existe no dicionário.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterando sobre o dicionário</span>
+<span class="k">for</span> <span class="n">coordenadas</span><span class="p">,</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">elementos_graficos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Na posição </span><span class="si">{</span><span class="n">coordenadas</span><span class="si">}</span><span class="s2">, temos um(a) </span><span class="si">{</span><span class="n">elemento</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Na posição (10, 20), temos um(a) Botão
+Na posição (50, 75), temos um(a) Caixa de Texto
+Na posição (120, 40), temos um(a) Imagem
+Na posição (80, 100), temos um(a) Rótulo
+Na posição (200, 150), temos um(a) Barra de Progresso
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Retornando Múltiplos Valores de uma Função:</strong>  É uma prática comum retornar múltiplos valores de uma função usando uma tupla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">coordenadas</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="c1"># Retorna uma tupla (x, y)</span>
+
+<span class="n">ponto</span> <span class="o">=</span> <span class="n">coordenadas</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ponto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ponto</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 20)
+&lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="unpacking">
+<h2>Unpacking<a class="headerlink" href="#unpacking" title="Link to this heading">#</a></h2>
+<p>Vamos agora explorar uma técnica muito elegante e útil chamada “unpacking” (desempacotamento) com tuplas. Quando você tem uma tupla, pode atribuir seus elementos individualmente a variáveis em uma única linha. Isso é especialmente conveniente quando você sabe quantos elementos a tupla contém e quer dar nomes significativos a cada um deles.</p>
+<p>Por exemplo, se você tiver uma tupla <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> representando coordenadas, pode descompactá-la diretamente em duas variáveis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+20
+</pre></div>
+</div>
+</div>
+</div>
+<p>Isso torna o código mais legível e conciso, evitando a necessidade de acessar os elementos da tupla por índice.</p>
+<p><strong>Observação</strong>: O número de variáveis no lado esquerdo deve corresponder exatamente ao número de elementos na tupla; caso contrário, você receberá um erro.</p>
+</section>
+<section id="exercicios-teoricos">
+<h2><strong>Exercícios Teóricos</strong><a class="headerlink" href="#exercicios-teoricos" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>**Explique a diferença fundamental entre uma lista e uma tupla em Python, focando na característica de imutabilidade.</p></li>
+<li><p><strong>O que significa “unpacking” de uma tupla? Dê um exemplo prático de como o unpacking pode ser útil e por que ele torna o código mais legível.</strong> (Considerem a atribuição de valores a variáveis).</p></li>
+<li><p><strong>Por que as tuplas são frequentemente usadas para retornar múltiplos valores de uma função em Python? Qual a vantagem dessa abordagem em relação a retornar uma lista?</strong> (Pensem na clareza e segurança do código.)</p></li>
+<li><p><strong>Em quais situações você escolheria usar uma tupla em vez de uma lista? Dê exemplos concretos de cenários onde a imutabilidade da tupla seria uma vantagem significativa.</strong> (Pensem em casos de uso práticos.)</p></li>
+<li><p>Considere o seguinte código Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dados_pessoa</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;Engenheira&quot;</span><span class="p">)</span>
+<span class="n">nome</span><span class="p">,</span> <span class="n">idade</span><span class="p">,</span> <span class="n">profissao</span> <span class="o">=</span> <span class="n">dados_pessoa</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nome: </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Idade: </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Profissão: </span><span class="si">{</span><span class="n">profissao</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tentativa de modificar a tupla (comentada para evitar erro)</span>
+<span class="c1"># dados_pessoa[1] = 31  # Isso causaria um TypeError!</span>
+</pre></div>
+</div>
+<p><strong>Responda às seguintes perguntas:</strong></p>
+<ol class="arabic simple">
+<li><p>Qual é o valor impresso para “Nome”, “Idade” e “Profissão” após a execução do código? Explique como esses valores são atribuídos às variáveis.</p></li>
+<li><p>Por que a linha comentada <code class="docutils literal notranslate"><span class="pre">dados_pessoa[1]</span> <span class="pre">=</span> <span class="pre">31</span></code> causaria um erro se fosse “descomentada” e executada? Qual tipo de erro seria lançado?</p></li>
+<li><p>O que é “unpacking” no contexto deste código, e qual o benefício de usar essa técnica em vez de acessar os elementos da tupla individualmente (por exemplo, <code class="docutils literal notranslate"><span class="pre">dados_pessoa[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">dados_pessoa[1]</span></code>, etc.)?</p></li>
+<li><p>Suponha que você quisesse criar uma nova tupla a partir de <code class="docutils literal notranslate"><span class="pre">dados_pessoa</span></code> e adicionar um novo elemento no início (por exemplo, o ID da pessoa). Como você faria isso sem modificar a tupla original?</p></li>
+<li><p>Em qual cenário prático você usaria uma tupla como <code class="docutils literal notranslate"><span class="pre">dados_pessoa</span></code> para representar informações sobre uma pessoa? Justifique sua resposta considerando as características das tuplas.</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="exercicios-para-praticar">
+<h2><strong>Exercícios para Praticar</strong><a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Função para Inverter Tupla:</strong> Escreva uma função que receba uma tupla como entrada e retorne uma nova tupla com os elementos na ordem inversa.</p></li>
+<li><p><strong>Encontrando o Segundo Maior Elemento:</strong> Crie uma função que receba uma tupla de números e encontre o segundo maior elemento.</p></li>
+<li><p><strong>Tuplas como Chaves de Dicionário:</strong> Crie um dicionário onde as chaves são tuplas contendo o nome e a idade de algumas pessoas. Imprima o dicionário.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Exploramos as tuplas, um tipo de dado fundamental em Python para armazenar coleções imutáveis de itens. Vimos como elas se diferenciam das listas, principalmente pela sua imutabilidade, o que garante a integridade dos dados e pode otimizar o desempenho em certas situações. Dominar tuplas é crucial para tarefas como retornar múltiplos valores de funções.</p>
+<section id="o-que-aprendemos-hoje">
+<h3>O que aprendemos hoje?<a class="headerlink" href="#o-que-aprendemos-hoje" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Definimos e criamos tuplas.</p></li>
+<li><p>Compreendemos a imutabilidade das tuplas e suas implicações.</p></li>
+<li><p>Acessamos elementos de uma tupla por índice.</p></li>
+<li><p>Exploramos o uso do operador unpacking para atribuir valores de uma tupla a variáveis individuais.</p></li>
+<li><p>Vimos como as tuplas são mais eficientes em termos de desempenho que listas, especialmente quando não precisam ser modificadas.</p></li>
+</ul>
+</section>
+<section id="proximos-passos">
+<h3>Próximos Passos<a class="headerlink" href="#proximos-passos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Prática:</strong> Resolva os exercícios propostos no material da aula para solidificar o entendimento dos conceitos.</p></li>
+<li><p><strong>Exploração:</strong> Pesquise sobre as aplicações de tuplas em áreas como programação funcional e representação de dados estruturados.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dicionarios.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dicionários em Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="conjuntos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Conjuntos (Sets) em Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tuplas em Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizagem">Objetivos de Aprendizagem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas">Operações Básicas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-um-tuplas-em-um-loop">Percorrendo um Tuplas em um Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-built-in-do-python">Funções <em>built-in</em> do Python</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-tuplas-casos-de-uso-reais">Por Que Usar Tuplas? Casos de Uso Reais</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unpacking">Unpacking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-teoricos"><strong>Exercícios Teóricos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr. Denis M. L. Martins
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Conjuntos (Sets) em Python &#8212; Fundamentos de Programação em Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/conjuntos';</script>
+    <link rel="canonical" href="https://denmartins.github.io/fundamentos-python-book/book/conjuntos.html" />
+    <link rel="icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Tuplas em Python" href="tuplas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Fundamentos de Programação em Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Fundamentos de Programação em Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="conceitos-basicos.html">Introdução à linguagem Python e ao ambiente Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variaveis-tipos-dados.html">Variáveis e Tipos de Dados em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estruturas-de-controle-loop.html">Estruturas de Controle e Laços de Repetição</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Manipulação de Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dicionarios.html">Dicionários em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuplas.html">Tuplas em Python</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conjuntos (Sets) em Python</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/denmartins/fundamentos-python-book/master?urlpath=tree/book/conjuntos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/denmartins/fundamentos-python-book/blob/master/book/conjuntos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/edit/main/book/conjuntos.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/issues/new?title=Issue%20on%20page%20%2Fbook/conjuntos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/conjuntos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conjuntos (Sets) em Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizagem">Objetivos de Aprendizagem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-dos-conjuntos">Características dos Conjuntos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas">Operações Básicas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-um-tuplas-em-um-loop">Percorrendo um Tuplas em um Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-built-in-do-python">Funções <em>built-in</em> do Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-teoricos">Exercícios Teóricos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="conjuntos-sets-em-python">
+<h1>Conjuntos (Sets) em Python<a class="headerlink" href="#conjuntos-sets-em-python" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Vamos agora nos dedicar a compreender Conjuntos em Python. Vamos cobrir o conceito, suas características e aplicações práticas.</p>
+<section id="objetivos-de-aprendizagem">
+<h2>Objetivos de Aprendizagem<a class="headerlink" href="#objetivos-de-aprendizagem" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Criar conjuntos usando chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> e a função <code class="docutils literal notranslate"><span class="pre">set()</span></code></p></li>
+<li><p>Compreender as restrições quanto aos tipos de dados permitidos dentro de um conjunto (imutabilidade).</p></li>
+<li><p>Demonstrar proficiência em realizar operações comuns com conjuntos, como união, interseção e diferença.</p></li>
+</ul>
+</section>
+<section id="conceitos-fundamentais">
+<h2>Conceitos Fundamentais<a class="headerlink" href="#conceitos-fundamentais" title="Link to this heading">#</a></h2>
+<p>Em matemática, um conjunto é uma coleção não ordenada de elementos únicos. Em Python, os conjuntos são implementados como objetos do tipo <code class="docutils literal notranslate"><span class="pre">set</span></code>. Eles são usados para armazenar coleções de itens distintos e oferecem operações eficientes para testes de pertinência (<em>membership testing</em>), remoção de duplicatas e outras operações matemáticas de conjuntos, como união, interseção e diferença.</p>
+<p><strong>Sintaxe:</strong> Existem duas maneiras principais de criar um conjunto em Python:</p>
+<ul class="simple">
+<li><p><strong>Usando chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code>:</strong>  Você pode criar um conjunto diretamente usando chaves, mas lembre-se que a sintaxe com chaves também é usada para dicionários!</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>  <span class="c1"># Saída: {1, 2, 3, 4, 5}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Usando a função <code class="docutils literal notranslate"><span class="pre">set()</span></code>:</strong> A função <code class="docutils literal notranslate"><span class="pre">set()</span></code> pode ser usada para converter uma lista ou qualquer outro iterável em um conjunto. Isso é particularmente útil para remover duplicatas de uma lista.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_com_duplicatas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">conjunto_sem_duplicatas</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lista_com_duplicatas</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conjunto_sem_duplicatas</span><span class="p">)</span>  <span class="c1"># Saída: {1, 2, 3, 4, 5}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Importante:</strong> Conjuntos não podem conter elementos mutáveis como listas ou outros conjuntos. Eles só podem conter tipos de dados <a class="reference external" href="https://stackoverflow.com/questions/14535730/what-does-hashable-mean-in-python"><em>hashable</em></a>, como números, strings e tuplas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grupos_de_cores</span> <span class="o">=</span> <span class="p">{[</span><span class="s2">&quot;rosa&quot;</span><span class="p">,</span> <span class="s2">&quot;amarelo&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;verde&quot;</span><span class="p">,</span> <span class="s2">&quot;branco&quot;</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">grupos_de_cores</span> <span class="o">=</span> <span class="p">{[</span><span class="s2">&quot;rosa&quot;</span><span class="p">,</span> <span class="s2">&quot;amarelo&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;verde&quot;</span><span class="p">,</span> <span class="s2">&quot;branco&quot;</span><span class="p">]}</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="caracteristicas-dos-conjuntos">
+<h2>Características dos Conjuntos<a class="headerlink" href="#caracteristicas-dos-conjuntos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Não Ordenados:</strong> Os elementos em um conjunto não mantém a ordem na qual eles foram adicionados ao conjunto.</p></li>
+<li><p><strong>Únicos:</strong> Um conjunto não pode conter elementos duplicados. Se você tentar adicionar um elemento que já existe, ele será ignorado.</p></li>
+<li><p><strong>Mutáveis:</strong> Um conjunto é mutável – você pode adicionar e remover elementos após a criação.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operacoes-basicas">
+<h2>Operações Básicas<a class="headerlink" href="#operacoes-basicas" title="Link to this heading">#</a></h2>
+<p>Python oferece uma variedade de operações para manipular conjuntos:</p>
+<p><strong>Adicionando Elementos:</strong> <code class="docutils literal notranslate"><span class="pre">add(elemento)</span></code> adiciona um elemento ao conjunto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">meu_conjunto</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Removendo Elementos:</strong> <code class="docutils literal notranslate"><span class="pre">remove(elemento)</span></code> remove um elemento específico do conjunto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">meu_conjunto</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 3}
+{1, 3}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Observação</strong>: Se o elemento não existir, <code class="docutils literal notranslate"><span class="pre">remove(elemento)</span></code> produz um erro.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">meu_conjunto</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">meu_conjunto</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para evitar essa situação, use <code class="docutils literal notranslate"><span class="pre">discard(elemento)</span></code>: remove um elemento se ele estiver presente, mas não levanta um erro caso contrário.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">meu_conjunto</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Não levanta erro porque 2 não está no conjunto</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 3}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>União:</strong> <code class="docutils literal notranslate"><span class="pre">|</span></code> ou <code class="docutils literal notranslate"><span class="pre">union()</span></code> retorna um novo conjunto contendo todos os elementos de ambos os conjuntos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">uniao</span> <span class="o">=</span> <span class="n">conjunto1</span> <span class="o">|</span> <span class="n">conjunto2</span>  <span class="c1"># Ou: uniao = conjunto1.union(conjunto2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">uniao</span><span class="p">)</span>  <span class="c1"># Saída: {1, 2, 3, 4, 5}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Interseção:</strong> <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> ou <code class="docutils literal notranslate"><span class="pre">intersection()</span></code> retorna um novo conjunto contendo apenas os elementos que estão presentes em ambos os conjuntos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">intersecao</span> <span class="o">=</span> <span class="n">conjunto1</span> <span class="o">&amp;</span> <span class="n">conjunto2</span>  <span class="c1"># Ou: intersecao = conjunto1.intersection(conjunto2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">intersecao</span><span class="p">)</span>  <span class="c1"># Saída: {3}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Diferença:</strong> <code class="docutils literal notranslate"><span class="pre">-</span></code> ou <code class="docutils literal notranslate"><span class="pre">difference()</span></code> retorna um novo conjunto contendo os elementos que estão presentes no primeiro conjunto, mas não no segundo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">conjunto2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">diferenca</span> <span class="o">=</span> <span class="n">conjunto1</span> <span class="o">-</span> <span class="n">conjunto2</span>  <span class="c1"># Ou: diferenca = conjunto1.difference(conjunto2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diferenca</span><span class="p">)</span>  <span class="c1"># Saída: {1, 2}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Teste de Pertinência:</strong> <code class="docutils literal notranslate"><span class="pre">in</span></code> verifica se um elemento está presente no conjunto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">meu_conjunto</span><span class="p">)</span>  <span class="c1"># Saída: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="ow">in</span> <span class="n">meu_conjunto</span><span class="p">)</span>  <span class="c1"># Saída: False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="percorrendo-um-tuplas-em-um-loop">
+<h2>Percorrendo um Tuplas em um Loop<a class="headerlink" href="#percorrendo-um-tuplas-em-um-loop" title="Link to this heading">#</a></h2>
+<p>Vamos criar uma nova tupla e percorrê-la utilizando um loop <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">meu_conjunto</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funcoes-built-in-do-python">
+<h2>Funções <em>built-in</em> do Python<a class="headerlink" href="#funcoes-built-in-do-python" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Criando um conjunto para os exemplos</span>
+<span class="n">meu_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">25</span><span class="p">}</span>  <span class="c1"># Note a duplicidade do &#39;5&#39; - será removida.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo 1</strong>: <code class="docutils literal notranslate"><span class="pre">len()</span></code> - Obtendo o número de elementos em uma tupla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tamanho</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tamanho do conjunto: </span><span class="si">{</span><span class="n">tamanho</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tamanho do conjunto: 5
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo 2: <code class="docutils literal notranslate"><span class="pre">max()</span></code> - Encontrando o Maior Elemento</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">maior_elemento</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Maior elemento: </span><span class="si">{</span><span class="n">maior_elemento</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maior elemento: 25
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo 3: <code class="docutils literal notranslate"><span class="pre">min()</span></code> - Encontrando o Menor Elemento</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menor_elemento</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Menor elemento: </span><span class="si">{</span><span class="n">menor_elemento</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Menor elemento: 5
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exemplo 4: <code class="docutils literal notranslate"><span class="pre">sum()</span></code> - Somando os Elementos (para Conjuntos Numéricos)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soma</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">meu_conjunto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Soma dos elementos: </span><span class="si">{</span><span class="n">soma</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Soma dos elementos: 75
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercicios-teoricos">
+<h2>Exercícios Teóricos<a class="headerlink" href="#exercicios-teoricos" title="Link to this heading">#</a></h2>
+<p>Para testar a compreensão conceitual de vocês sobre conjuntos em Python, preparei cinco questões teóricas. Pensem com calma e justifiquem suas respostas – o raciocínio é tão importante quanto a resposta correta!</p>
+<ol class="arabic simple">
+<li><p><strong>Explique a diferença fundamental entre uma lista e um conjunto em Python, destacando as principais características que os distinguem.</strong> (Pensem na ordem dos elementos, duplicatas e como isso afeta o uso de cada estrutura.)</p></li>
+<li><p><strong>Descreva a importância da operação de interseção entre dois conjuntos. Em qual cenário prático essa operação seria particularmente útil?</strong> (Pensem em exemplos do mundo real onde você precisa encontrar elementos comuns.)</p></li>
+</ol>
+</section>
+<section id="exercicios-para-praticar">
+<h2><strong>Exercícios para Praticar</strong><a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Remova as duplicatas de uma lista usando um conjunto.</p></li>
+<li><p>Encontre os elementos comuns entre dois conjuntos.</p></li>
+<li><p>Determine a diferença entre dois conjuntos.</p></li>
+<li><p>Crie um programa que utilize conjuntos para verificar se duas listas contêm os mesmos elementos, independentemente da ordem.</p></li>
+<li><p>Considere o seguinte código Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">conjunto_b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>
+<span class="n">conjunto_c</span> <span class="o">=</span> <span class="n">conjunto_a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">conjunto_b</span><span class="p">)</span>
+<span class="n">conjunto_d</span> <span class="o">=</span> <span class="n">conjunto_a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">conjunto_b</span><span class="p">)</span>
+<span class="n">conjunto_e</span> <span class="o">=</span> <span class="n">conjunto_a</span> <span class="o">-</span> <span class="n">conjunto_b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Conjunto A: </span><span class="si">{</span><span class="n">conjunto_a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Conjunto B: </span><span class="si">{</span><span class="n">conjunto_b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Conjunto C (A U B): </span><span class="si">{</span><span class="n">conjunto_c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Conjunto D (A ∩ B): </span><span class="si">{</span><span class="n">conjunto_d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Conjunto E (A - B): </span><span class="si">{</span><span class="n">conjunto_e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Responda às seguintes perguntas:</strong></p>
+<ol class="arabic simple">
+<li><p>Qual é o valor do <code class="docutils literal notranslate"><span class="pre">conjunto_c</span></code> após a execução do código? Explique como ele foi obtido.</p></li>
+<li><p>Qual é o valor do <code class="docutils literal notranslate"><span class="pre">conjunto_d</span></code> após a execução do código? Explique como ele foi obtido.</p></li>
+<li><p>Qual é o valor do <code class="docutils literal notranslate"><span class="pre">conjunto_e</span></code> após a execução do código? Explique como ele foi obtido.</p></li>
+<li><p>Se você substituísse <code class="docutils literal notranslate"><span class="pre">conjunto_a</span></code> por uma lista em vez de um conjunto, qual erro ocorreria ao tentar executar a linha <code class="docutils literal notranslate"><span class="pre">conjunto_c</span> <span class="pre">=</span> <span class="pre">conjunto_a.union(conjunto_b)</span></code>? Justifique sua resposta.</p></li>
+<li><p>Suponha que você quisesse adicionar o número 9 ao <code class="docutils literal notranslate"><span class="pre">conjunto_a</span></code>. Escreva uma única linha de código para realizar essa operação.</p></li>
+</ol>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="conclusao">
+<h2>Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Exploramos um tipo de dado fundamental em Python: os conjuntos. Vimos como eles se diferenciam das listas e tuplas, principalmente pela garantia de elementos únicos. Dominar conjuntos é crucial para tarefas como remoção de duplicatas, operações matemáticas de conjuntos (união, interseção, diferença) e otimização de testes de pertinência.</p>
+<section id="o-que-aprendemos-hoje">
+<h3>O que aprendemos hoje?<a class="headerlink" href="#o-que-aprendemos-hoje" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Definimos e criamos conjuntos usando chaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> e a função <code class="docutils literal notranslate"><span class="pre">set()</span></code>.</p></li>
+<li><p>Aplicamos operações como união, interseção e diferença para manipular conjuntos.</p></li>
+<li><p>Utilizamos o operador <code class="docutils literal notranslate"><span class="pre">in</span></code> para verificar a pertinência de elementos em um conjunto.</p></li>
+<li><p>Exploramos funções built-in como <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">min()</span></code> e <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> aplicadas a conjuntos.</p></li>
+</ul>
+</section>
+<section id="proximos-passos">
+<h3>Próximos Passos<a class="headerlink" href="#proximos-passos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Prática:</strong> Resolva os exercícios propostos no material da aula para solidificar o entendimento dos conceitos.</p></li>
+<li><p><strong>Exploração:</strong> Pesquise sobre as aplicações de conjuntos em áreas como análise de dados, algoritmos e otimização.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tuplas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tuplas em Python</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizagem">Objetivos de Aprendizagem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conceitos-fundamentais">Conceitos Fundamentais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-dos-conjuntos">Características dos Conjuntos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-basicas">Operações Básicas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#percorrendo-um-tuplas-em-um-loop">Percorrendo um Tuplas em um Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-built-in-do-python">Funções <em>built-in</em> do Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-teoricos">Exercícios Teóricos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">Próximos Passos</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr. Denis M. L. Martins
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
