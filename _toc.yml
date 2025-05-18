@@ -12,6 +12,7 @@ chapters:
   - file: book/dicionarios
   - file: book/tuplas
   - file: book/conjuntos
+  - file: book/modulos
   # - file: book/markdown
   # - file: book/notebooks
   # - file: book/bibliography
