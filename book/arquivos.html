@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Manipulação de Arquivos &#8212; Fundamentos de Programação em Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/arquivos';</script>
+    <link rel="canonical" href="https://denmartins.github.io/fundamentos-python-book/book/arquivos.html" />
+    <link rel="icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Trabalhando com Módulos e Pacotes em Python" href="modulos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Fundamentos de Programação em Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Fundamentos de Programação em Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="conceitos-basicos.html">Introdução à linguagem Python e ao ambiente Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variaveis-tipos-dados.html">Variáveis e Tipos de Dados em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estruturas-de-controle-loop.html">Estruturas de Controle e Laços de Repetição</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Manipulação de Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listas.html">Listas em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dicionarios.html">Dicionários em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuplas.html">Tuplas em Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="conjuntos.html">Conjuntos (Sets) em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulos.html">Trabalhando com Módulos e Pacotes em Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Manipulação de Arquivos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/denmartins/fundamentos-python-book/master?urlpath=tree/book/arquivos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/denmartins/fundamentos-python-book/blob/master/book/arquivos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/edit/main/book/arquivos.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/denmartins/fundamentos-python-book/issues/new?title=Issue%20on%20page%20%2Fbook/arquivos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/arquivos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Manipulação de Arquivos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrindo-e-fechando-arquivos">Abrindo e Fechando Arquivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-open">Função open()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modos-de-abertura">Modos de Abertura</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fechando-arquivos">Fechando Arquivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boa-pratica">Boa prática</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">📝 <strong>Exercícios para Praticar</strong>:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-facil-contador-de-linhas">🟢 <strong>Nível Fácil</strong>: contador de linhas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-medio-cifrando-um-arquivo-com-a-cifra-de-cesar">🔵 <strong>Nível Médio</strong>: cifrando um arquivo com a Cifra de César.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao"><strong>📌 Introdução</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#descricao-do-exercicio"><strong>📌 Descrição do Exercício</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos"><strong>📌 Requisitos</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-entrada-e-saida"><strong>📌 Exemplo de Entrada e Saída</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-teoricos"><strong>Exercícios Teóricos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projeto-cifrando-um-arquivo-com-a-cifra-de-cesar">Mini-projeto: Cifrando um arquivo com a Cifra de César.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introdução</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Descrição do Exercício</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Requisitos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exemplo de Entrada e Saída</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Próximos Passos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionais">Recursos Adicionais:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="manipulacao-de-arquivos">
+<h1>Manipulação de Arquivos<a class="headerlink" href="#manipulacao-de-arquivos" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>A manipulação de arquivos é uma funcionalidade essencial para o armazenamento de dados de forma persistente.</p>
+<p><strong>Objetivos de Aprendizagem</strong></p>
+<p>Ao final desta aula, você será capaz de:</p>
+<ul class="simple">
+<li><p>Compreender os princípios básicos da manipulação de arquivos em Python</p></li>
+<li><p>Trabalhar com arquivos para armazenar e processar dados</p></li>
+<li><p>Aplicar boas práticas na manipulação de arquivos</p></li>
+</ul>
+<section id="abrindo-e-fechando-arquivos">
+<h2>Abrindo e Fechando Arquivos<a class="headerlink" href="#abrindo-e-fechando-arquivos" title="Link to this heading">#</a></h2>
+<p>Para trabalhar com arquivos em Python, é fundamental saber como abrir e fechar arquivos corretamente.</p>
+<section id="funcao-open">
+<h3>Função open()<a class="headerlink" href="#funcao-open" title="Link to this heading">#</a></h3>
+<p>A função open() é utilizada para abrir um arquivo e retorna um objeto do tipo arquivo. Sua sintaxe básica é​ <code class="docutils literal notranslate"><span class="pre">file_object</span> <span class="pre">=</span> <span class="pre">open(&quot;nome_do_arquivo&quot;,</span> <span class="pre">&quot;modo&quot;)</span></code>, onde:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nome_do_arquivo</span></code>: Especifica o caminho e o nome do arquivo a ser aberto.​</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">modo</span></code>: Determina a finalidade da abertura do arquivo (leitura, escrita, etc.).</p></li>
+</ul>
+</section>
+<section id="modos-de-abertura">
+<h3>Modos de Abertura<a class="headerlink" href="#modos-de-abertura" title="Link to this heading">#</a></h3>
+<p>Os modos mais comuns para abrir arquivos são:</p>
+<ul class="simple">
+<li><p>‘r’: Modo de leitura. Abre um arquivo para leitura (padrão).​</p></li>
+<li><p>‘w’: Modo de escrita. Cria um novo arquivo ou sobrescreve o existente para escrita.​</p></li>
+<li><p>‘a’: Modo de anexação. Abre um arquivo para adicionar conteúdo ao final sem sobrescrever o existente.​</p></li>
+<li><p>‘b’: Modo binário. Utilizado para arquivos binários, como imagens. Pode ser combinado com outros modos, como ‘rb’ ou ‘wb’.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;novo_arquivo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fechando-arquivos">
+<h3>Fechando Arquivos<a class="headerlink" href="#fechando-arquivos" title="Link to this heading">#</a></h3>
+<p>Após concluir as operações em um arquivo, é essencial fechá-lo para liberar recursos do sistema. Isso é feito com o método <code class="docutils literal notranslate"><span class="pre">close()</span></code>:​</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file_object</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arquivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="boa-pratica">
+<h3>Boa prática<a class="headerlink" href="#boa-pratica" title="Link to this heading">#</a></h3>
+<p>Uma prática recomendada é utilizar a estrutura with para abrir arquivos, garantindo que eles sejam fechados automaticamente após o bloco de código ser executado:​</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;nome_do_arquivo&quot;</span><span class="p">,</span> <span class="s2">&quot;modo&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+    <span class="c1"># operações com o arquivo</span>
+</pre></div>
+</div>
+<p>O formato TXT é um dos mais simples e contém apenas texto puro. Ele é útil para armazenar logs, listas e dados simples sem estrutura tabular.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Criando e escrevendo em um arquivo TXT</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;arquivo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Olá, este é um arquivo de texto!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Cada linha pode armazenar informações diferentes.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lendo um arquivo TXT</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;arquivo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>  <span class="c1"># Exibe todo o conteúdo do arquivo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arq</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;vendas.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uma vez aberto, podemos realizar a leitura do arquivo usando as funções: read(n), readline( ) ou readlines( ).</p>
+<p>A função read(n) lê até n bytes. Caso o valor não seja informado, a função lê o arquivo inteiro. A função readline( ) retorna uma string contendo a primeira linha do arquivo. Por fim, a função readlines( ) retorna uma lista de strings, sendo cada elemento uma linha do arquivo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linhas</span> <span class="o">=</span> <span class="n">arq</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">linhas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">linhas</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linha</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arq</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;meu_arquivo.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w+&quot;</span><span class="p">)</span>
+ 
+<span class="n">linhasParaOArquivo</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;linha 1&quot;</span><span class="p">,</span><span class="s2">&quot;linha 2&quot;</span><span class="p">,</span><span class="s2">&quot;linha 3&quot;</span><span class="p">,</span> <span class="s2">&quot;linha 4&quot;</span><span class="p">,</span><span class="s2">&quot;linha 5&quot;</span><span class="p">]</span>
+ 
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">linhasParaOArquivo</span><span class="p">:</span>
+    <span class="n">arq</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">arq</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">arq</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 2</strong>:  Escreva um programa que permita ao usuário adicionar mais texto ao arquivo meu_texto.txt sem apagar o conteúdo existente. O programa deve utilizar o modo de abertura “a” (anexação).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 3</strong>:  Escreva um programa que permita ao usuário adicionar mais texto ao arquivo meu_texto.txt sem apagar o conteúdo existente. O programa deve utilizar o modo de abertura “a” (anexação).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>📖 <strong>Exercício 4</strong>: Crie um programa que gerencia uma lista de tarefas, permitindo ao usuário adicionar novas tarefas e exibir a lista.
+As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
+<p>Requisitos:</p>
+<ul class="simple">
+<li><p>O programa deve permitir que o usuário adicione quantas tarefas quiser.</p></li>
+<li><p>Se o usuário digitar “listar”, o programa deve exibir todas as tarefas.</p></li>
+<li><p>Se o usuário digitar</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercicios-para-praticar">
+<h2>📝 <strong>Exercícios para Praticar</strong>:<a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
+<section id="nivel-facil-contador-de-linhas">
+<h3>🟢 <strong>Nível Fácil</strong>: contador de linhas<a class="headerlink" href="#nivel-facil-contador-de-linhas" title="Link to this heading">#</a></h3>
+<p>Crie um programa que solicita ao usuário o nome de um arquivo de texto (.txt). O programa deve abrir esse arquivo e contar quantas linhas ele contém.</p>
+<p>Requisitos:</p>
+<ul class="simple">
+<li><p>O usuário deve fornecer o nome do arquivo (exemplo: meutexto.txt).</p></li>
+<li><p>O programa deve exibir o número total de linhas no arquivo.</p></li>
+</ul>
+</section>
+<section id="nivel-medio-cifrando-um-arquivo-com-a-cifra-de-cesar">
+<h3>🔵 <strong>Nível Médio</strong>: cifrando um arquivo com a Cifra de César.<a class="headerlink" href="#nivel-medio-cifrando-um-arquivo-com-a-cifra-de-cesar" title="Link to this heading">#</a></h3>
+<section id="introducao">
+<h4><strong>📌 Introdução</strong><a class="headerlink" href="#introducao" title="Link to this heading">#</a></h4>
+<p>A <strong>Cifra de César</strong> é um dos métodos de criptografia mais antigos e simples. Ela funciona deslocando cada letra do texto original <strong>um número fixo de posições</strong> no alfabeto.</p>
+<p>Por exemplo, se utilizarmos um deslocamento de <strong>3 posições</strong>:</p>
+<ul class="simple">
+<li><p>A letra <strong>“A”</strong> se torna <strong>“D”</strong></p></li>
+<li><p>A letra <strong>“B”</strong> se torna <strong>“E”</strong></p></li>
+<li><p>A palavra <strong>“PYTHON”</strong> se torna <strong>“SBWKRQ”</strong></p></li>
+</ul>
+<p>Este método é uma forma <strong>simples</strong> de ocultar informações e é um ótimo exercício para manipulação de strings e arquivos em Python.</p>
+</section>
+<section id="descricao-do-exercicio">
+<h4><strong>📌 Descrição do Exercício</strong><a class="headerlink" href="#descricao-do-exercicio" title="Link to this heading">#</a></h4>
+<p>Escreva um programa que:</p>
+<ol class="arabic simple">
+<li><p><strong>Solicita ao usuário o nome de um arquivo de texto (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>) para ser lido.</strong></p></li>
+<li><p><strong>Solicita ao usuário um número inteiro que representará o deslocamento da Cifra de César.</strong></p></li>
+<li><p><strong>Lê o conteúdo do arquivo e cifra o texto usando a Cifra de César.</strong></p></li>
+<li><p><strong>Salva o texto cifrado em um novo arquivo chamado <code class="docutils literal notranslate"><span class="pre">arquivo_cifrado.txt</span></code>.</strong></p></li>
+</ol>
+</section>
+<section id="requisitos">
+<h4><strong>📌 Requisitos</strong><a class="headerlink" href="#requisitos" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>O programa deve <strong>ler um arquivo</strong> e <strong>criptografar seu conteúdo</strong> utilizando a <strong>Cifra de César</strong>.</p></li>
+<li><p>O deslocamento deve ser definido pelo usuário.</p></li>
+<li><p>Apenas <strong>letras do alfabeto</strong> devem ser cifradas. Números, espaços e pontuações devem permanecer inalterados.</p></li>
+<li><p>O programa deve salvar o texto cifrado em um novo arquivo <strong>sem modificar o original</strong>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="exemplo-de-entrada-e-saida">
+<h4><strong>📌 Exemplo de Entrada e Saída</strong><a class="headerlink" href="#exemplo-de-entrada-e-saida" title="Link to this heading">#</a></h4>
+<p><strong>📂 Arquivo de Entrada (<code class="docutils literal notranslate"><span class="pre">mensagem.txt</span></code>)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Python é uma linguagem incrível!
+</pre></div>
+</div>
+<p><strong>Usuário digita:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Digite</span> <span class="n">o</span> <span class="n">nome</span> <span class="n">do</span> <span class="n">arquivo</span><span class="p">:</span> <span class="n">mensagem</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Digite</span> <span class="n">o</span> <span class="n">deslocamento</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p><strong>📂 Arquivo Gerado (<code class="docutils literal notranslate"><span class="pre">arquivo_cifrado.txt</span></code>)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sbwkrq é xpd odqjxdjhp lqfuyháv!
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conclusao">
+<h2>✅ Conclusão<a class="headerlink" href="#conclusao" title="Link to this heading">#</a></h2>
+<p>Parabéns por concluir esta aula!</p>
+<section id="o-que-aprendemos-hoje">
+<h3>🎯 O que aprendemos hoje?<a class="headerlink" href="#o-que-aprendemos-hoje" title="Link to this heading">#</a></h3>
+<p>Nesta aula, exploramos os conceitos fundamentais da manipulação de arquivos em Python, abordando como ler, escrever e modificar arquivos simples. Compreendemos a importância desses formatos para o armazenamento e troca de informações, além de aprender boas práticas para trabalhar com arquivos de maneira eficiente e segura.</p>
+</section>
+<section id="proximos-passos">
+<h3>📌 Próximos Passos<a class="headerlink" href="#proximos-passos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Resolva os problemas na seção “Exercícios para Praticar”.</p></li>
+<li><p>Explorar formas de tratar erros comuns ao trabalhar com arquivos, como arquivos inexistentes ou problemas de codificação.</p></li>
+</ul>
+</section>
+<section id="parabens-pela-dedicacao-nos-vemos-na-proxima-aula">
+<h3>Parabéns pela dedicação! Nos vemos na próxima aula!<a class="headerlink" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="exercicios-teoricos">
+<h2><strong>Exercícios Teóricos</strong><a class="headerlink" href="#exercicios-teoricos" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Módulos vs. Pacotes</strong>: Alguém te diz que “módulo” e “biblioteca” são sinônimos em Python. Você discorda. Explique por que você discorda, diferenciando os dois termos de forma simples. Dê um exemplo de cada um para ilustrar sua explicação.</p></li>
+<li><p><strong>A Importância do import</strong>:  Imagine que você está escrevendo um programa Python e precisa usar a função <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> (raiz quadrada). Você sabe que essa função está disponível no Python, mas como o interpretador Python sabe onde encontrar essa função? Explique em suas próprias palavras o que acontece quando você usa a instrução <code class="docutils literal notranslate"><span class="pre">import</span></code> (por exemplo, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code>) e por que ela é necessária para usar as funcionalidades de um módulo.</p></li>
+<li><p><strong>Modularidade e Reusabilidade</strong>: Considere um cenário em que você está desenvolvendo uma aplicação complexa para análise de dados financeiros. Essa aplicação envolve diversas tarefas, como leitura de arquivos CSV, limpeza de dados, cálculo de indicadores estatísticos e geração de relatórios. Discuta os benefícios de organizar o código dessa aplicação em módulos separados (por exemplo, um módulo para leitura de dados, outro para cálculos, outro para relatórios). Quais são as vantagens da modularização em termos de reusabilidade do código, manutenção e colaboração em equipe?</p></li>
+<li><p><strong>Modo de importação</strong>: Explique a diferença entre <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modulo</span></code> e <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">modulo</span> <span class="pre">import</span> <span class="pre">funcao</span></code>. Quais as vantagens e desvantagens de cada abordagem?</p></li>
+</ol>
+</section>
+<section id="id1">
+<h2><strong>Exercícios para Praticar</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Crie um programa que lê um arquivo de texto <code class="docutils literal notranslate"><span class="pre">meu_texto.txt</span></code> e conta quantas palavras ele contém.</p></li>
+</ol>
+<p>Requisitos:</p>
+<ul class="simple">
+<li><p>Considere que as palavras estão separadas por espaços.</p></li>
+<li><p>Exiba o total de palavras ao final.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Escreva um programa que permita ao usuário adicionar mais texto ao arquivo <code class="docutils literal notranslate"><span class="pre">meu_texto.txt</span></code> sem apagar o conteúdo existente. O programa deve utilizar o modo de abertura “a” (anexação).</p></li>
+<li><p>Crie um programa que solicita ao usuário o nome de um arquivo de texto (.txt). O programa deve abrir esse arquivo e contar quantas linhas ele contém.</p></li>
+</ol>
+<p>Requisitos:</p>
+<ul class="simple">
+<li><p>O usuário deve fornecer o nome do arquivo (exemplo: meutexto.txt).</p></li>
+<li><p>O programa deve exibir o número total de linhas no arquivo.</p></li>
+</ul>
+</section>
+<section id="mini-projeto-cifrando-um-arquivo-com-a-cifra-de-cesar">
+<h2>Mini-projeto: Cifrando um arquivo com a Cifra de César.<a class="headerlink" href="#mini-projeto-cifrando-um-arquivo-com-a-cifra-de-cesar" title="Link to this heading">#</a></h2>
+</section>
+<section id="id2">
+<h2>Introdução<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>A <strong>Cifra de César</strong> é um dos métodos de criptografia mais antigos e simples. Ela funciona deslocando cada letra do texto original <strong>um número fixo de posições</strong> no alfabeto.</p>
+<p>Por exemplo, se utilizarmos um deslocamento de <strong>3 posições</strong>:</p>
+<ul class="simple">
+<li><p>A letra <strong>“A”</strong> se torna <strong>“D”</strong></p></li>
+<li><p>A letra <strong>“B”</strong> se torna <strong>“E”</strong></p></li>
+<li><p>A palavra <strong>“PYTHON”</strong> se torna <strong>“SBWKRQ”</strong></p></li>
+</ul>
+<p>Este método é uma forma <strong>simples</strong> de ocultar informações e é um ótimo exercício para manipulação de strings e arquivos em Python.</p>
+<section id="id3">
+<h3>Descrição do Exercício<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Escreva um programa que:</p>
+<ol class="arabic simple">
+<li><p><strong>Solicita ao usuário o nome de um arquivo de texto (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>) para ser lido.</strong></p></li>
+<li><p><strong>Solicita ao usuário um número inteiro que representará o deslocamento da Cifra de César.</strong></p></li>
+<li><p><strong>Lê o conteúdo do arquivo e cifra o texto usando a Cifra de César.</strong></p></li>
+<li><p><strong>Salva o texto cifrado em um novo arquivo chamado <code class="docutils literal notranslate"><span class="pre">arquivo_cifrado.txt</span></code>.</strong></p></li>
+</ol>
+</section>
+<section id="id4">
+<h3>Requisitos<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>O programa deve <strong>ler um arquivo</strong> e <strong>criptografar seu conteúdo</strong> utilizando a <strong>Cifra de César</strong>.</p></li>
+<li><p>O deslocamento deve ser definido pelo usuário.</p></li>
+<li><p>Apenas <strong>letras do alfabeto</strong> devem ser cifradas. Números, espaços e pontuações devem permanecer inalterados.</p></li>
+<li><p>O programa deve salvar o texto cifrado em um novo arquivo <strong>sem modificar o original</strong>.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Exemplo de Entrada e Saída<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p><strong>Arquivo de Entrada (<code class="docutils literal notranslate"><span class="pre">mensagem.txt</span></code>)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Python é uma linguagem incrível!
+</pre></div>
+</div>
+<p><strong>Usuário digita:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Digite</span> <span class="n">o</span> <span class="n">nome</span> <span class="n">do</span> <span class="n">arquivo</span><span class="p">:</span> <span class="n">mensagem</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Digite</span> <span class="n">o</span> <span class="n">deslocamento</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p><strong>Arquivo Gerado (<code class="docutils literal notranslate"><span class="pre">arquivo_cifrado.txt</span></code>)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sbwkrq é xpd odqjxdjhp lqfuyháv!
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>Conclusão<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>Exploramos os conceitos de módulos e Pacotes. Compreender como organizar seu código em unidades reutilizáveis e aproveitar o poder de Pacotes externas é crucial para se tornar um desenvolvedor Python eficiente e produtivo.</p>
+<section id="id7">
+<h3>O que aprendemos hoje?<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Exploramos os conceitos fundamentais da manipulação de arquivos em Python, abordando como ler, escrever e modificar arquivos simples. Compreendemos a importância desses formatos para o armazenamento e troca de informações, além de aprender boas práticas para trabalhar com arquivos de maneira eficiente e segura.</p>
+</section>
+<section id="id8">
+<h3>Próximos Passos<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Explore Mais pacotes:</strong> Python possui uma infinidade de pacotes para praticamente qualquer necessidade. Dedique tempo para explorar aquelas que se alinham aos seus interesses e projetos.</p></li>
+<li><p><strong>Contribua para a Comunidade:</strong> Considere contribuir para projetos open source, seja corrigindo bugs, adicionando funcionalidades ou documentando o código.</p></li>
+<li><p><strong>Crie Seus Próprios Pacotes:</strong> À medida que você ganha experiência, pense em como suas soluções podem ser reutilizadas por outros desenvolvedores e crie suas próprios pacotes para compartilhar com a comunidade.</p></li>
+<li><p><strong>Aprofunde-se em Design de Módulos:</strong> Estude padrões de design de módulos para criar código mais limpo, modular e extensível.</p></li>
+</ul>
+<p><strong>Lembre-se:</strong> A programação é uma jornada contínua de aprendizado.  Não tenha medo de experimentar, cometer erros e aprender com eles. Continue praticando, explorando e se desenvolvendo!</p>
+</section>
+<section id="recursos-adicionais">
+<h3>Recursos Adicionais:<a class="headerlink" href="#recursos-adicionais" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Documentação Oficial do Python:</strong> <a class="reference external" href="https://docs.python.org/">https://docs.python.org/</a></p></li>
+<li><p><strong>PyPI (Python Package Index):</strong> <a class="reference external" href="https://pypi.org/">https://pypi.org/</a> - O repositório oficial de pacotes Python.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modulos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Trabalhando com Módulos e Pacotes em Python</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abrindo-e-fechando-arquivos">Abrindo e Fechando Arquivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-open">Função open()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modos-de-abertura">Modos de Abertura</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fechando-arquivos">Fechando Arquivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boa-pratica">Boa prática</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">📝 <strong>Exercícios para Praticar</strong>:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-facil-contador-de-linhas">🟢 <strong>Nível Fácil</strong>: contador de linhas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-medio-cifrando-um-arquivo-com-a-cifra-de-cesar">🔵 <strong>Nível Médio</strong>: cifrando um arquivo com a Cifra de César.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao"><strong>📌 Introdução</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#descricao-do-exercicio"><strong>📌 Descrição do Exercício</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos"><strong>📌 Requisitos</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-entrada-e-saida"><strong>📌 Exemplo de Entrada e Saída</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parabens-pela-dedicacao-nos-vemos-na-proxima-aula">Parabéns pela dedicação! Nos vemos na próxima aula!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-teoricos"><strong>Exercícios Teóricos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projeto-cifrando-um-arquivo-com-a-cifra-de-cesar">Mini-projeto: Cifrando um arquivo com a Cifra de César.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introdução</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Descrição do Exercício</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Requisitos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exemplo de Entrada e Saída</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Próximos Passos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionais">Recursos Adicionais:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Prof. Dr. Denis M. L. Martins
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
