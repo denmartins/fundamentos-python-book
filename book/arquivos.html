@@ -452,17 +452,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boa-pratica">Boa prática</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">📝 <strong>Exercícios para Praticar</strong>:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-facil-contador-de-linhas">🟢 <strong>Nível Fácil</strong>: contador de linhas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-medio-cifrando-um-arquivo-com-a-cifra-de-cesar">🔵 <strong>Nível Médio</strong>: cifrando um arquivo com a Cifra de César.</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao"><strong>📌 Introdução</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#descricao-do-exercicio"><strong>📌 Descrição do Exercício</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos"><strong>📌 Requisitos</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-entrada-e-saida"><strong>📌 Exemplo de Entrada e Saída</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a></li>
@@ -470,18 +459,17 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-teoricos"><strong>Exercícios Teóricos</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projeto-cifrando-um-arquivo-com-a-cifra-de-cesar">Mini-projeto: Cifrando um arquivo com a Cifra de César.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introdução</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Descrição do Exercício</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Requisitos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exemplo de Entrada e Saída</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao">Introdução</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descricao-do-exercicio">Descrição do Exercício</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos">Requisitos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-entrada-e-saida">Exemplo de Entrada e Saída</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusão</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">O que aprendemos hoje?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Próximos Passos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionais">Recursos Adicionais:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Próximos Passos</a></li>
 </ul>
 </li>
 </ul>
@@ -521,10 +509,10 @@ document.write(`
 <h3>Modos de Abertura<a class="headerlink" href="#modos-de-abertura" title="Link to this heading">#</a></h3>
 <p>Os modos mais comuns para abrir arquivos são:</p>
 <ul class="simple">
-<li><p>‘r’: Modo de leitura. Abre um arquivo para leitura (padrão).​</p></li>
-<li><p>‘w’: Modo de escrita. Cria um novo arquivo ou sobrescreve o existente para escrita.​</p></li>
-<li><p>‘a’: Modo de anexação. Abre um arquivo para adicionar conteúdo ao final sem sobrescrever o existente.​</p></li>
-<li><p>‘b’: Modo binário. Utilizado para arquivos binários, como imagens. Pode ser combinado com outros modos, como ‘rb’ ou ‘wb’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'r'</span></code>: Modo de leitura. Abre um arquivo para leitura (padrão).​</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'w'</span></code>: Modo de escrita. Cria um novo arquivo ou sobrescreve o existente para escrita.​</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'a'</span></code>: Modo de anexação. Abre um arquivo para adicionar conteúdo ao final sem sobrescrever o existente.​</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'b'</span></code>: Modo binário. Utilizado para arquivos binários, como imagens. Pode ser combinado com outros modos, como ‘rb’ ou ‘wb’.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -553,6 +541,7 @@ document.write(`
 <p>Uma prática recomendada é utilizar a estrutura with para abrir arquivos, garantindo que eles sejam fechados automaticamente após o bloco de código ser executado:​</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;nome_do_arquivo&quot;</span><span class="p">,</span> <span class="s2">&quot;modo&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
     <span class="c1"># operações com o arquivo</span>
+    <span class="c1"># ...</span>
 </pre></div>
 </div>
 <p>O formato TXT é um dos mais simples e contém apenas texto puro. Ele é útil para armazenar logs, listas e dados simples sem estrutura tabular.</p>
@@ -583,8 +572,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Uma vez aberto, podemos realizar a leitura do arquivo usando as funções: read(n), readline( ) ou readlines( ).</p>
-<p>A função read(n) lê até n bytes. Caso o valor não seja informado, a função lê o arquivo inteiro. A função readline( ) retorna uma string contendo a primeira linha do arquivo. Por fim, a função readlines( ) retorna uma lista de strings, sendo cada elemento uma linha do arquivo.</p>
+<p>Uma vez aberto, podemos realizar a leitura do arquivo usando as funções: <code class="docutils literal notranslate"><span class="pre">read(n)</span></code>, <code class="docutils literal notranslate"><span class="pre">readline()</span></code> ou <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>.</p>
+<p>A função <code class="docutils literal notranslate"><span class="pre">read(n)</span></code> lê até <code class="docutils literal notranslate"><span class="pre">n</span></code> bytes. Caso o valor não seja informado, a função lê o arquivo inteiro. A função <code class="docutils literal notranslate"><span class="pre">readline()</span></code> retorna uma string contendo a primeira linha do arquivo. Por fim, a função <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> retorna uma lista de strings, sendo cada elemento uma linha do arquivo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linhas</span> <span class="o">=</span> <span class="n">arq</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -616,106 +605,6 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>📖 <strong>Exercício 2</strong>:  Escreva um programa que permita ao usuário adicionar mais texto ao arquivo meu_texto.txt sem apagar o conteúdo existente. O programa deve utilizar o modo de abertura “a” (anexação).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>📖 <strong>Exercício 3</strong>:  Escreva um programa que permita ao usuário adicionar mais texto ao arquivo meu_texto.txt sem apagar o conteúdo existente. O programa deve utilizar o modo de abertura “a” (anexação).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>📖 <strong>Exercício 4</strong>: Crie um programa que gerencia uma lista de tarefas, permitindo ao usuário adicionar novas tarefas e exibir a lista.
-As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
-<p>Requisitos:</p>
-<ul class="simple">
-<li><p>O programa deve permitir que o usuário adicione quantas tarefas quiser.</p></li>
-<li><p>Se o usuário digitar “listar”, o programa deve exibir todas as tarefas.</p></li>
-<li><p>Se o usuário digitar</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adicione sua solução aqui</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="exercicios-para-praticar">
-<h2>📝 <strong>Exercícios para Praticar</strong>:<a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
-<section id="nivel-facil-contador-de-linhas">
-<h3>🟢 <strong>Nível Fácil</strong>: contador de linhas<a class="headerlink" href="#nivel-facil-contador-de-linhas" title="Link to this heading">#</a></h3>
-<p>Crie um programa que solicita ao usuário o nome de um arquivo de texto (.txt). O programa deve abrir esse arquivo e contar quantas linhas ele contém.</p>
-<p>Requisitos:</p>
-<ul class="simple">
-<li><p>O usuário deve fornecer o nome do arquivo (exemplo: meutexto.txt).</p></li>
-<li><p>O programa deve exibir o número total de linhas no arquivo.</p></li>
-</ul>
-</section>
-<section id="nivel-medio-cifrando-um-arquivo-com-a-cifra-de-cesar">
-<h3>🔵 <strong>Nível Médio</strong>: cifrando um arquivo com a Cifra de César.<a class="headerlink" href="#nivel-medio-cifrando-um-arquivo-com-a-cifra-de-cesar" title="Link to this heading">#</a></h3>
-<section id="introducao">
-<h4><strong>📌 Introdução</strong><a class="headerlink" href="#introducao" title="Link to this heading">#</a></h4>
-<p>A <strong>Cifra de César</strong> é um dos métodos de criptografia mais antigos e simples. Ela funciona deslocando cada letra do texto original <strong>um número fixo de posições</strong> no alfabeto.</p>
-<p>Por exemplo, se utilizarmos um deslocamento de <strong>3 posições</strong>:</p>
-<ul class="simple">
-<li><p>A letra <strong>“A”</strong> se torna <strong>“D”</strong></p></li>
-<li><p>A letra <strong>“B”</strong> se torna <strong>“E”</strong></p></li>
-<li><p>A palavra <strong>“PYTHON”</strong> se torna <strong>“SBWKRQ”</strong></p></li>
-</ul>
-<p>Este método é uma forma <strong>simples</strong> de ocultar informações e é um ótimo exercício para manipulação de strings e arquivos em Python.</p>
-</section>
-<section id="descricao-do-exercicio">
-<h4><strong>📌 Descrição do Exercício</strong><a class="headerlink" href="#descricao-do-exercicio" title="Link to this heading">#</a></h4>
-<p>Escreva um programa que:</p>
-<ol class="arabic simple">
-<li><p><strong>Solicita ao usuário o nome de um arquivo de texto (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>) para ser lido.</strong></p></li>
-<li><p><strong>Solicita ao usuário um número inteiro que representará o deslocamento da Cifra de César.</strong></p></li>
-<li><p><strong>Lê o conteúdo do arquivo e cifra o texto usando a Cifra de César.</strong></p></li>
-<li><p><strong>Salva o texto cifrado em um novo arquivo chamado <code class="docutils literal notranslate"><span class="pre">arquivo_cifrado.txt</span></code>.</strong></p></li>
-</ol>
-</section>
-<section id="requisitos">
-<h4><strong>📌 Requisitos</strong><a class="headerlink" href="#requisitos" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>O programa deve <strong>ler um arquivo</strong> e <strong>criptografar seu conteúdo</strong> utilizando a <strong>Cifra de César</strong>.</p></li>
-<li><p>O deslocamento deve ser definido pelo usuário.</p></li>
-<li><p>Apenas <strong>letras do alfabeto</strong> devem ser cifradas. Números, espaços e pontuações devem permanecer inalterados.</p></li>
-<li><p>O programa deve salvar o texto cifrado em um novo arquivo <strong>sem modificar o original</strong>.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="exemplo-de-entrada-e-saida">
-<h4><strong>📌 Exemplo de Entrada e Saída</strong><a class="headerlink" href="#exemplo-de-entrada-e-saida" title="Link to this heading">#</a></h4>
-<p><strong>📂 Arquivo de Entrada (<code class="docutils literal notranslate"><span class="pre">mensagem.txt</span></code>)</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Python é uma linguagem incrível!
-</pre></div>
-</div>
-<p><strong>Usuário digita:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Digite</span> <span class="n">o</span> <span class="n">nome</span> <span class="n">do</span> <span class="n">arquivo</span><span class="p">:</span> <span class="n">mensagem</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">Digite</span> <span class="n">o</span> <span class="n">deslocamento</span><span class="p">:</span> <span class="mi">3</span>
-</pre></div>
-</div>
-<p><strong>📂 Arquivo Gerado (<code class="docutils literal notranslate"><span class="pre">arquivo_cifrado.txt</span></code>)</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sbwkrq é xpd odqjxdjhp lqfuyháv!
-</pre></div>
-</div>
-</section>
 </section>
 </section>
 <hr class="docutils" />
@@ -740,14 +629,11 @@ As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
 <section id="exercicios-teoricos">
 <h2><strong>Exercícios Teóricos</strong><a class="headerlink" href="#exercicios-teoricos" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>Módulos vs. Pacotes</strong>: Alguém te diz que “módulo” e “biblioteca” são sinônimos em Python. Você discorda. Explique por que você discorda, diferenciando os dois termos de forma simples. Dê um exemplo de cada um para ilustrar sua explicação.</p></li>
-<li><p><strong>A Importância do import</strong>:  Imagine que você está escrevendo um programa Python e precisa usar a função <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> (raiz quadrada). Você sabe que essa função está disponível no Python, mas como o interpretador Python sabe onde encontrar essa função? Explique em suas próprias palavras o que acontece quando você usa a instrução <code class="docutils literal notranslate"><span class="pre">import</span></code> (por exemplo, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code>) e por que ela é necessária para usar as funcionalidades de um módulo.</p></li>
-<li><p><strong>Modularidade e Reusabilidade</strong>: Considere um cenário em que você está desenvolvendo uma aplicação complexa para análise de dados financeiros. Essa aplicação envolve diversas tarefas, como leitura de arquivos CSV, limpeza de dados, cálculo de indicadores estatísticos e geração de relatórios. Discuta os benefícios de organizar o código dessa aplicação em módulos separados (por exemplo, um módulo para leitura de dados, outro para cálculos, outro para relatórios). Quais são as vantagens da modularização em termos de reusabilidade do código, manutenção e colaboração em equipe?</p></li>
-<li><p><strong>Modo de importação</strong>: Explique a diferença entre <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modulo</span></code> e <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">modulo</span> <span class="pre">import</span> <span class="pre">funcao</span></code>. Quais as vantagens e desvantagens de cada abordagem?</p></li>
+<li><p>…</p></li>
 </ol>
 </section>
-<section id="id1">
-<h2><strong>Exercícios para Praticar</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="exercicios-para-praticar">
+<h2><strong>Exercícios para Praticar</strong><a class="headerlink" href="#exercicios-para-praticar" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Crie um programa que lê um arquivo de texto <code class="docutils literal notranslate"><span class="pre">meu_texto.txt</span></code> e conta quantas palavras ele contém.</p></li>
 </ol>
@@ -769,8 +655,8 @@ As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
 <section id="mini-projeto-cifrando-um-arquivo-com-a-cifra-de-cesar">
 <h2>Mini-projeto: Cifrando um arquivo com a Cifra de César.<a class="headerlink" href="#mini-projeto-cifrando-um-arquivo-com-a-cifra-de-cesar" title="Link to this heading">#</a></h2>
 </section>
-<section id="id2">
-<h2>Introdução<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="introducao">
+<h2>Introdução<a class="headerlink" href="#introducao" title="Link to this heading">#</a></h2>
 <p>A <strong>Cifra de César</strong> é um dos métodos de criptografia mais antigos e simples. Ela funciona deslocando cada letra do texto original <strong>um número fixo de posições</strong> no alfabeto.</p>
 <p>Por exemplo, se utilizarmos um deslocamento de <strong>3 posições</strong>:</p>
 <ul class="simple">
@@ -779,8 +665,8 @@ As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
 <li><p>A palavra <strong>“PYTHON”</strong> se torna <strong>“SBWKRQ”</strong></p></li>
 </ul>
 <p>Este método é uma forma <strong>simples</strong> de ocultar informações e é um ótimo exercício para manipulação de strings e arquivos em Python.</p>
-<section id="id3">
-<h3>Descrição do Exercício<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="descricao-do-exercicio">
+<h3>Descrição do Exercício<a class="headerlink" href="#descricao-do-exercicio" title="Link to this heading">#</a></h3>
 <p>Escreva um programa que:</p>
 <ol class="arabic simple">
 <li><p><strong>Solicita ao usuário o nome de um arquivo de texto (<code class="docutils literal notranslate"><span class="pre">.txt</span></code>) para ser lido.</strong></p></li>
@@ -789,8 +675,8 @@ As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
 <li><p><strong>Salva o texto cifrado em um novo arquivo chamado <code class="docutils literal notranslate"><span class="pre">arquivo_cifrado.txt</span></code>.</strong></p></li>
 </ol>
 </section>
-<section id="id4">
-<h3>Requisitos<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="requisitos">
+<h3>Requisitos<a class="headerlink" href="#requisitos" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>O programa deve <strong>ler um arquivo</strong> e <strong>criptografar seu conteúdo</strong> utilizando a <strong>Cifra de César</strong>.</p></li>
 <li><p>O deslocamento deve ser definido pelo usuário.</p></li>
@@ -798,8 +684,8 @@ As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
 <li><p>O programa deve salvar o texto cifrado em um novo arquivo <strong>sem modificar o original</strong>.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h3>Exemplo de Entrada e Saída<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="exemplo-de-entrada-e-saida">
+<h3>Exemplo de Entrada e Saída<a class="headerlink" href="#exemplo-de-entrada-e-saida" title="Link to this heading">#</a></h3>
 <p><strong>Arquivo de Entrada (<code class="docutils literal notranslate"><span class="pre">mensagem.txt</span></code>)</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Python é uma linguagem incrível!
 </pre></div>
@@ -816,28 +702,18 @@ As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id6">
-<h2>Conclusão<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>Conclusão<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Exploramos os conceitos de módulos e Pacotes. Compreender como organizar seu código em unidades reutilizáveis e aproveitar o poder de Pacotes externas é crucial para se tornar um desenvolvedor Python eficiente e produtivo.</p>
-<section id="id7">
-<h3>O que aprendemos hoje?<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>O que aprendemos hoje?<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Exploramos os conceitos fundamentais da manipulação de arquivos em Python, abordando como ler, escrever e modificar arquivos simples. Compreendemos a importância desses formatos para o armazenamento e troca de informações, além de aprender boas práticas para trabalhar com arquivos de maneira eficiente e segura.</p>
 </section>
-<section id="id8">
-<h3>Próximos Passos<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Próximos Passos<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Explore Mais pacotes:</strong> Python possui uma infinidade de pacotes para praticamente qualquer necessidade. Dedique tempo para explorar aquelas que se alinham aos seus interesses e projetos.</p></li>
-<li><p><strong>Contribua para a Comunidade:</strong> Considere contribuir para projetos open source, seja corrigindo bugs, adicionando funcionalidades ou documentando o código.</p></li>
-<li><p><strong>Crie Seus Próprios Pacotes:</strong> À medida que você ganha experiência, pense em como suas soluções podem ser reutilizadas por outros desenvolvedores e crie suas próprios pacotes para compartilhar com a comunidade.</p></li>
-<li><p><strong>Aprofunde-se em Design de Módulos:</strong> Estude padrões de design de módulos para criar código mais limpo, modular e extensível.</p></li>
-</ul>
-<p><strong>Lembre-se:</strong> A programação é uma jornada contínua de aprendizado.  Não tenha medo de experimentar, cometer erros e aprender com eles. Continue praticando, explorando e se desenvolvendo!</p>
-</section>
-<section id="recursos-adicionais">
-<h3>Recursos Adicionais:<a class="headerlink" href="#recursos-adicionais" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Documentação Oficial do Python:</strong> <a class="reference external" href="https://docs.python.org/">https://docs.python.org/</a></p></li>
-<li><p><strong>PyPI (Python Package Index):</strong> <a class="reference external" href="https://pypi.org/">https://pypi.org/</a> - O repositório oficial de pacotes Python.</p></li>
+<li><p>Resolva os problemas na seção “Exercícios para Praticar”.</p></li>
+<li><p>Explorar formas de tratar erros comuns ao trabalhar com arquivos, como arquivos inexistentes ou problemas de codificação.</p></li>
 </ul>
 </section>
 </section>
@@ -905,17 +781,6 @@ As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boa-pratica">Boa prática</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar">📝 <strong>Exercícios para Praticar</strong>:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-facil-contador-de-linhas">🟢 <strong>Nível Fácil</strong>: contador de linhas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-medio-cifrando-um-arquivo-com-a-cifra-de-cesar">🔵 <strong>Nível Médio</strong>: cifrando um arquivo com a Cifra de César.</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao"><strong>📌 Introdução</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#descricao-do-exercicio"><strong>📌 Descrição do Exercício</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos"><strong>📌 Requisitos</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-entrada-e-saida"><strong>📌 Exemplo de Entrada e Saída</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusao">✅ Conclusão</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-aprendemos-hoje">🎯 O que aprendemos hoje?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proximos-passos">📌 Próximos Passos</a></li>
@@ -923,18 +788,17 @@ As tarefas devem ser armazenadas no arquivo tarefas.txt.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-teoricos"><strong>Exercícios Teóricos</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Exercícios para Praticar</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-para-praticar"><strong>Exercícios para Praticar</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projeto-cifrando-um-arquivo-com-a-cifra-de-cesar">Mini-projeto: Cifrando um arquivo com a Cifra de César.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Introdução</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Descrição do Exercício</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Requisitos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exemplo de Entrada e Saída</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao">Introdução</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descricao-do-exercicio">Descrição do Exercício</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos">Requisitos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-de-entrada-e-saida">Exemplo de Entrada e Saída</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Conclusão</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">O que aprendemos hoje?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Próximos Passos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-adicionais">Recursos Adicionais:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Conclusão</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">O que aprendemos hoje?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Próximos Passos</a></li>
 </ul>
 </li>
 </ul>
